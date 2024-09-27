@@ -1,0 +1,36 @@
+{
+  "es": {
+    "reservar": "Reservar",
+    "eventos": "Eventos",
+    "cultural": "Cultural",
+    "nosotros": "Nosotros",
+    "elenco": "Elenco",
+    "consejo_directivo": "Consejo directivo",
+    "mision_vision": "Misión visión",
+    "nuestra_institucion": "Nuestra institución",
+    "elenco_danzas": "Elenco de danzas",
+    "coro_brizas_titicaca": "Coro brisas del Titicaca",
+    "estudiantina": "Estudiantina",
+    "libro_reclamaciones": "Libro de reclamaciones",
+    "trabaja_con_nosotros": "Trabaja con nosotros",
+    "contactanos": "Contáctanos",
+    "info_titulo": "62 años de historia"
+  },
+  "en": {
+    "reservar": "Reserve",
+    "eventos": "Events",
+    "cultural": "Cultural",
+    "nosotros": "About us",
+    "elenco": "Cast",
+    "consejo_directivo": "Directive Committee",
+    "mision_vision": "Mission visión",
+    "nuestra_institucion": "Our institution",
+    "elenco_danzas": "Dance cast",
+    "coro_brizas_titicaca": "Brisas del Titicaca choir",
+    "estudiantina": "Estudiantina",
+    "libro_reclamaciones": "Claim book",
+    "trabaja_con_nosotros": "Work with us",
+    "contactanos": "contact us",
+    "info_titulo": "62 years of history"
+  }
+}
