@@ -33,7 +33,7 @@ export default function EditFundadores({ fundadores, onClose }: Props) {
   const [open, setOpen] = useState(true);
 
   const [nombre, setNombre] = useState<string>(fundadores.nombre);
-  const [descripcion, setDescripcion] = useState<string>(
+  const [descripcion, setDescripcion] = useState<any>(
     fundadores.descripcion
   );
   const [image, setImage] = useState<string>(fundadores.imagen);
