@@ -10,6 +10,7 @@ import trs from "@/public/locales/translate.json";
 import CaroucelHistoria from "../Historia/CaroucelHistoria";
 import CaroucelListEvento from "../Evento/CaroucelListEvento";
 import LineaDelTiempo from "../Historia/LineaDelTiempo";
+import PannellumHistoria from "../Pannellum/PannellumHistoria";
 
 export default function Page2() {
   const [load, setLoad] = useState(false);
@@ -88,6 +89,10 @@ export default function Page2() {
           height={0}
           className="w-full h-auto"
         />
+      </div>
+
+      <div className="w-full h-auto">
+        <PannellumHistoria />
       </div>
 
       <div className="w-full bg-black text-white">
