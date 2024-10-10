@@ -65,7 +65,7 @@ export default function Page2() {
                 a Lima con sus tradiciones, danzas, música y costumbres. Es
                 decir, con toda su cultura a cuestas. Y no solo era la nostalgia
                 por el terruño, sino también el empeñó por difundir la cultura
-                altiplánica en la capital del Perú.
+                altiplánica en la capital del Perú. editado :V
               </span>
             </div>
           </div>
