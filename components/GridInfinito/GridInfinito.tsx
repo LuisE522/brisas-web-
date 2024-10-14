@@ -193,6 +193,29 @@ export default function GameArea() {
     load();
   }, []);
 
+  const [widthGrid, setWidthGrid] = useState(300);
+  const [heightGrid, setHeightGrid] = useState(380);
+
+  useEffect(() => {
+    const updateColumns = () => {
+      if (window.innerWidth < 640) {
+        setWidthGrid(150);
+        setHeightGrid(200);
+      } else if (window.innerWidth < 768) {
+        setWidthGrid(200);
+        setHeightGrid(280);
+      } else {
+        console.log("Por defecto")
+        setWidthGrid(300);
+        setHeightGrid(380);
+      }
+    };
+
+    updateColumns();
+    window.addEventListener("resize", updateColumns);
+    return () => window.removeEventListener("resize", updateColumns);
+  }, []);
+
   if (loading) {
     return (
       <>
@@ -216,12 +239,12 @@ export default function GameArea() {
         style={{ cursor: isDragging ? "grabbing" : "grab" }}
       >
         <div
-          className="grid gap-4"
+          className="grid gap-1 md:gap-3"
           style={{
             gridTemplateColumns: `repeat(${initialColumns}, 1fr)`, // Definir el número de columnas
-            width: `${initialColumns * 300}px`, // Ajustar el ancho total
+            width: `${initialColumns * widthGrid}px`, // Ajustar el ancho total
             height: `${
-              Math.ceil(visibleImages.length / initialColumns) * 380
+              Math.ceil(visibleImages.length / initialColumns) * heightGrid
             }px`, // Ajustar la altura total
           }}
         >

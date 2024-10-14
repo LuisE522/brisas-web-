@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   const roles = data?.data.usuarios_roles;
 
-  /* console.log(roles); */
+  console.log(roles);
 
   const isAdmin = roles?.some((rol: any) => rol.rol.nombre === "Administrador");
 
