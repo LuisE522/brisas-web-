@@ -39,6 +39,7 @@ export default function Danzas() {
         /> */}
         {/* Imagen de fondo */}
 
+        {/* Humo */}
         <div className="w-full h-full absolute top-0 flex flex-row justify-between">
           <Image
             unoptimized
@@ -57,10 +58,11 @@ export default function Danzas() {
             className="h-full w-auto absolute top-0 right-0"
           />
         </div>
+        {/* Humo */}
 
         {/* Imagenes del centro */}
         <div className="h-full w-full absolute top-0 flex justify-center items-center">
-          <div className="max-w-[95%] w-[1080px] grid grid-cols-2 gap-5 !relative">
+          <div className="max-w-[95%] w-[1080px] 2xl:w-full 2xl:max-w-screen-2xl grid grid-cols-2 gap-5 !relative">
             <div className="w-full h-full flex justify-start">
               <Image
                 unoptimized
@@ -68,7 +70,7 @@ export default function Danzas() {
                 alt="alt"
                 width={0}
                 height={0}
-                className="h-[120px] sm:h-[220px] md:h-[250px] lg:h-[400px] w-auto"
+                className="h-[120px] sm:h-[220px] md:h-[250px] lg:h-[400px] 2xl:h-[600px] w-auto"
               />
             </div>
             <div className="w-full h-full flex justify-end">
@@ -78,13 +80,15 @@ export default function Danzas() {
                 alt="alt"
                 width={0}
                 height={0}
-                className="h-[120px] sm:h-[220px] md:h-[250px] lg:h-[400px] w-auto"
+                className="h-[120px] sm:h-[220px] md:h-[250px] lg:h-[400px] 2xl:h-[600px] w-auto"
               />
             </div>
           </div>
         </div>
         {/* Imagenes del centro */}
       </div>
+
+      {/* Texto del centro */}
       <div className="w-full h-[250px] sm:h-[350px] md:h-screen bg-black">
         <div className="mx-auto w-[300px] md:w-[600px] h-full !relative">
           <div className="h-full w-full flex flex-col gap-1 items-center justify-center text-white text-center">
@@ -109,16 +113,18 @@ export default function Danzas() {
           </div>
         </div>
       </div>
+      {/* Texto del centro */}
 
       <div className="min-h-screen w-full relative py-14">
-        <div className="w-full absolute -top-4 md:-top-8 flex justify-between">
+        {/* Plantas en los laterales */}
+        <div className="w-full absolute -top-2 sm:-top-4 md:-top-8 flex justify-between">
           <Image
             unoptimized
             src="/assets/images/danzas/planta1.png"
             alt="alt"
             width={0}
             height={0}
-            className="w-[150px] md:w-[300px] h-auto"
+            className="w-auto sm:w-[150px] md:w-[300px] h-[30px] sm:h-auto"
           />
           <Image
             unoptimized
@@ -126,19 +132,121 @@ export default function Danzas() {
             alt="alt"
             width={0}
             height={0}
-            className="w-[150px] md:w-[300px] h-auto scale-x-[-1]"
+            className="w-auto sm:w-[150px] md:w-[300px] h-[30px] sm:h-auto scale-x-[-1]"
           />
         </div>
+        {/* Plantas en los laterales */}
 
         <div className="h-full w-full mt-10 flex flex-col gap-20 md:gap-32  justify-center items-center">
-          <div className="max-w-[95%] mx-auto w-[800px] ">
-            <h1 className="bebas-neue text-2xl md:text-4xl lg:text-6xl text-center">
+          {/* Titulo ante de las danzas */}
+          <div className="max-w-[95%] mx-auto w-[800px] 2xl:w-full 2xl:max-w-screen-2xl">
+            <h1 className="bebas-neue text-2xl md:text-4xl lg:text-6xl 2xl:text-8xl text-center leading-tight">
               {translations[language].danza_titulo2}
             </h1>
           </div>
+          {/* Titulo ante de las danzas */}
 
-          <div className="w-full relative">
-            <div className="max-w-[95%] mx-auto w-[900px] h-auto grid grid-cols-2 gap-2">
+          {/* comienzo de las danzas mas importantes */}
+
+          <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto flex flex-col gap-20 md:gap-32">
+            <div className="w-full h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+              <Image
+                unoptimized
+                src="/assets/images/danzas/personaje9.png"
+                alt="alt"
+                width={0}
+                height={0}
+                className="h-full w-auto"
+              />
+              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+                <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
+                  {translations[language].danza_diablada_destacado_titulo}
+                </h1>
+                <p className="text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-base 2xl:text-xl">
+                  {translations[language].danza_diablada_destacado_descripcion}
+                </p>
+              </div>
+            </div>
+
+            <div className="w-full h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center flex-row-reverse gap-3 danzasFade">
+              <Image
+                unoptimized
+                src="/assets/images/danzas/personaje1.png"
+                alt="alt"
+                width={0}
+                height={0}
+                className="h-full w-auto"
+              />
+              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+                <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
+                  {translations[language].danza_caporales_titulo}
+                </h1>
+                <p className="text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-base 2xl:text-xl">
+                  {translations[language].danza_caporales_descripcion}
+                </p>
+              </div>
+            </div>
+
+            <div className="w-full h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+              <Image
+                unoptimized
+                src="/assets/images/danzas/personaje2.png"
+                alt="alt"
+                width={0}
+                height={0}
+                className="h-full w-auto"
+              />
+              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+                <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
+                  {translations[language].danza_sikuris_titulo}
+                </h1>
+                <p className="text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-base 2xl:text-xl">
+                  {translations[language].danza_sikuris_descripcion}
+                </p>
+              </div>
+            </div>
+
+            <div className="w-full h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center flex-row-reverse gap-3 danzasFade">
+              <Image
+                unoptimized
+                src="/assets/images/danzas/personaje3.png"
+                alt="alt"
+                width={0}
+                height={0}
+                className="h-full w-auto"
+              />
+              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+                <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
+                  {translations[language].danza_morenada_titulo}
+                </h1>
+                <p className="text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-base 2xl:text-xl">
+                  {translations[language].danza_morenada_descripcion}
+                </p>
+              </div>
+            </div>
+
+            <div className="w-full h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+              <Image
+                unoptimized
+                src="/assets/images/danzas/personaje4.png"
+                alt="alt"
+                width={0}
+                height={0}
+                className="h-full w-auto"
+              />
+              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+                <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
+                {translations[language].danza_kullawa_titulo}
+                </h1>
+                <p className="text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-base 2xl:text-xl">
+                {translations[language].danza_kullawa_descripcion}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/*  <div className="w-full relative">
+            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-auto flex justify-center items-end gap-3 relative">
               <div className="w-full h-full flex justify-center items-center">
                 <Image
                   unoptimized
@@ -149,21 +257,20 @@ export default function Danzas() {
                   className="w-full h-auto danzasFadeAndScale"
                 />
               </div>
-              <div className="w-full h-full flex justify-center items-end relative">
-                <Image
-                  unoptimized
-                  src="/assets/images/danzas/mancha8.png"
-                  alt="alt"
-                  width={0}
-                  height={0}
-                  className="absolute top-0 right-0 -z-10 w-auto h-auto"
-                />
-
+              <Image
+                unoptimized
+                src="/assets/images/danzas/mancha8.png"
+                alt="alt"
+                width={0}
+                height={0}
+                className="absolute top-0 right-0 -z-10 w-auto h-[600px]"
+              />
+              <div className="w-full h-full flex justify-center">
                 <div className="flex flex-col gap-2 danzasMarginTop">
-                  <h1 className="text-2xl lg:text-4xl bebas-neue">
+                  <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl bebas-neue">
                     {translations[language].danza_diablada_destacado_titulo}
                   </h1>
-                  <p className="text-[8px] md:text-xs lg:text-sm">
+                  <p className="text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
                     {
                       translations[language]
                         .danza_diablada_destacado_descripcion
@@ -183,13 +290,13 @@ export default function Danzas() {
               height={0}
               className="absolute top-0 lg:left-36 -z-10 w-auto h-auto md:h-[600px]"
             />
-            <div className="max-w-[95%] mx-auto w-[900px] h-auto grid grid-cols-2 gap-2">
+            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-auto flex justify-center items-end gap-3 relative">
               <div className="w-full h-full flex justify-center items-end">
                 <div className="flex flex-col gap-2 danzasMarginTop">
-                  <h1 className="text-2xl lg:text-4xl bebas-neue">
+                  <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl bebas-neue">
                     {translations[language].danza_caporales_titulo}
                   </h1>
-                  <p className="text-[8px] md:text-xs lg:text-sm">
+                  <p className="text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
                     {translations[language].danza_caporales_descripcion}
                   </p>
                 </div>
@@ -216,7 +323,7 @@ export default function Danzas() {
               height={0}
               className="absolute top-0 right-0 -z-10 w-[200px] lg:w-auto h-auto"
             />
-            <div className="max-w-[95%] mx-auto w-[900px] h-auto grid grid-cols-2 gap-2">
+            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-auto flex justify-center items-end gap-3 relative">
               <div className="w-full h-full flex justify-center items-center">
                 <Image
                   unoptimized
@@ -227,7 +334,7 @@ export default function Danzas() {
                   className="w-full h-auto danzasFadeAndScale"
                 />
               </div>
-              <div className="w-full h-full flex justify-center items-end relative">
+              <div className="w-full h-full flex justify-center">
                 <div className="absolute top-0 w-full flex justify-center">
                   <Image
                     unoptimized
@@ -239,10 +346,10 @@ export default function Danzas() {
                   />
                 </div>
                 <div className="flex flex-col gap-2 danzasMarginTop">
-                  <h1 className="text-2xl lg:text-4xl bebas-neue">
+                  <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl bebas-neue">
                     {translations[language].danza_sikuris_titulo}
                   </h1>
-                  <p className="text-[8px] md:text-xs lg:text-sm">
+                  <p className="text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
                     {translations[language].danza_sikuris_descripcion}
                   </p>
                 </div>
@@ -250,8 +357,8 @@ export default function Danzas() {
             </div>
           </div>
 
-          <div className="max-w-[95%] mx-auto w-[900px] h-auto grid grid-cols-2 gap-2">
-            <div className="w-full h-full flex justify-center items-end relative">
+          <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-auto flex justify-center items-end gap-3 relative">
+            <div className="w-full h-full flex justify-center">
               <div className="absolute top-0 w-full flex justify-center">
                 <Image
                   unoptimized
@@ -263,10 +370,10 @@ export default function Danzas() {
                 />
               </div>
               <div className="flex flex-col gap-2 danzasMarginTop">
-                <h1 className="text-2xl lg:text-4xl bebas-neue">
+                <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl bebas-neue">
                   {translations[language].danza_morenada_titulo}
                 </h1>
-                <p className="text-[8px] md:text-xs lg:text-sm">
+                <p className="text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
                   {translations[language].danza_morenada_descripcion}
                 </p>
               </div>
@@ -292,7 +399,7 @@ export default function Danzas() {
               height={0}
               className="absolute top-0 left-0 w-[150px] lg:w-[300px] h-auto"
             />
-            <div className="max-w-[95%] mx-auto w-[900px] h-auto grid grid-cols-2 gap-2">
+            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-auto flex justify-center items-end gap-3 relative">
               <div className="w-full h-full flex justify-center items-center">
                 <Image
                   unoptimized
@@ -300,10 +407,10 @@ export default function Danzas() {
                   alt="alt"
                   width={0}
                   height={0}
-                  className="w-full h-auto z-10 danzasFadeAndScale"
+                  className="w-auto h-full z-10 danzasFadeAndScale"
                 />
               </div>
-              <div className="w-full h-full flex justify-center items-end relative">
+              <div className="w-full h-full flex justify-center">
                 <div className="absolute top-0 w-full flex justify-center">
                   <Image
                     unoptimized
@@ -315,33 +422,36 @@ export default function Danzas() {
                   />
                 </div>
                 <div className="flex flex-col gap-2 danzasMarginTop">
-                  <h1 className="text-2xl lg:text-4xl bebas-neue">
+                  <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl bebas-neue">
                     {translations[language].danza_kullawa_titulo}
                   </h1>
-                  <p className="text-[8px] md:text-xs lg:text-sm">
+                  <p className="text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
                     {translations[language].danza_kullawa_descripcion}
                   </p>
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+          {/* Fin de las danzas mas importantes */}
         </div>
       </div>
+
+      {/* Separacion con degradado*/}
       <div className="h-[300px] w-full bg-gradient-to-t from-[#121212] to-white"></div>
-      
+      {/* Separacion con degradado*/}
+
       <div className="min-h-screen w-full bg-[#121212] flex flex-col">
         <div className="-mt-56 md:-mt-36 flex flex-col gap-20 md:gap-32">
-          <div className="max-w-[95%] w-[900px] mx-auto h-[200px] sm:h-[220px] md:h-[250px] lg:h-[430px] relative flex justify-end danzasFade">
-            <div className="h-full absolute top-0 left-0 w-[50%] md:w-[40%] flex justify-center flex-col gap-3 z-50">
+          <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+            <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-center flex-col md:gap-3 z-50">
               <h1
-                className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl  z-50 md:w-[70%]"
+                className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none"
                 style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
               >
                 {translations[language].danza_llamerada_titulo}
               </h1>
               <p
-                className="text-white  text-[8px] md:text-xs lg:text-sm"
-                style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
+                className="text-white text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl"
               >
                 {translations[language].danza_llamerada_descripcion}
               </p>
@@ -366,17 +476,16 @@ export default function Danzas() {
               className="absolute w-full h-auto"
             />
 
-            <div className="max-w-[95%] w-[900px] mx-auto h-[200px] sm:h-[220px] md:h-[250px] lg:h-[430px] relative flex justify-start danzasFade">
-              <div className="h-full absolute top-0 right-0 w-[50%] md:w-[40%] flex justify-center flex-col gap-3 z-50">
+            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex flex-row-reverse gap-3 justify-center danzasFade">
+              <div className="h-full top-0 right-0 w-[50%] md:w-[40%] flex justify-center flex-col md:gap-3 z-50">
                 <h1
-                  className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl  z-50 md:w-[70%]"
+                  className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none"
                   style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
                 >
                   {translations[language].danza_carnaval_de_arapa_titulo}
                 </h1>
                 <p
-                  className="text-white  text-[8px] md:text-xs lg:text-sm"
-                  style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
+                  className="text-white text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl"
                 >
                   {translations[language].danza_carnaval_de_arapa_descripcion}
                 </p>
@@ -391,17 +500,16 @@ export default function Danzas() {
               />
             </div>
 
-            <div className="max-w-[95%] w-[900px] mx-auto h-[200px] sm:h-[220px] md:h-[250px] lg:h-[430px] relative flex justify-end danzasFade">
-              <div className="h-full absolute top-0 left-0 w-[50%] md:w-[40%] flex justify-center flex-col gap-3 z-50">
+            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex gap-3 justify-center danzasFade">
+              <div className="h-full  top-0 left-0 w-[50%] md:w-[40%] flex justify-center flex-col md:gap-3 z-50">
                 <h1
-                  className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl  z-50 md:w-[70%]"
+                  className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none"
                   style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
                 >
                   {translations[language].danza_tucumanos_titulo}
                 </h1>
                 <p
-                  className="text-white text-[8px] md:text-xs lg:text-sm"
-                  style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
+                  className="text-white text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl"
                 >
                   {translations[language].danza_tucumanos_descripcion}
                 </p>
@@ -416,17 +524,16 @@ export default function Danzas() {
               />
             </div>
 
-            <div className="max-w-[95%] w-[900px] mx-auto h-[200px] sm:h-[220px] md:h-[250px] lg:h-[430px] relative flex justify-start danzasFade">
-              <div className="h-full absolute top-0 right-0 w-[50%] md:w-[40%] flex justify-center flex-col gap-3 z-50">
+            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex flex-row-reverse gap-3 justify-center danzasFade">
+              <div className="h-full top-0 right-0 w-[50%] md:w-[40%] flex justify-center flex-col md:gap-3 z-50">
                 <h1
-                  className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl  z-50 md:w-[70%]"
+                  className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none"
                   style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
                 >
                   {translations[language].danza_pandilla_punenia_titulo}
                 </h1>
                 <p
-                  className="text-white text-[8px] md:text-xs lg:text-sm"
-                  style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
+                  className="text-white text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl"
                 >
                   {translations[language].danza_pandilla_punenia_descripcion}
                 </p>
@@ -443,8 +550,8 @@ export default function Danzas() {
           </div>
 
           <div className="w-full flex flex-col gap-28">
-            <div className="max-w-[95%] mx-auto w-[800px] ">
-              <h1 className="bebas-neue text-2xl md:text-4xl lg:text-6xl text-center text-white">
+            <div className="max-w-[95%] mx-auto w-[800px] 2xl:w-full 2xl:max-w-screen-2xl">
+              <h1 className="bebas-neue text-2xl md:text-4xl lg:text-6xl 2xl:text-8xl text-center text-white">
                 {translations[language].danza_otras_danzas}
               </h1>
             </div>

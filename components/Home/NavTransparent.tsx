@@ -55,8 +55,8 @@ export default function NavTransparent() {
           isScrolled ? "fixed bg-black" : ""
         } z-50 transition-bg duration-300`}
       >
-        <div className="w-full hidden md:grid md:grid-cols-3 gap-3 md:gap-0 justify-center md:justify-between h-auto p-3 md:px-3 md:h-[124px] items-center text-base">
-          <div className="w-full text-white flex justify-center gap-5">
+        <div className="w-full hidden lg:grid md:grid-cols-[auto_40%_auto] gap-3 md:gap-0 justify-between h-auto p-3 md:px-10 md:h-[124px] 2xl:h-[150px] items-center text-base">
+          <div className="w-full text-white flex justify-start gap-5 text-sm xl:text-base 2xl:text-2xl">
             <Link href="/danzas">{translations[language].inicio}</Link>
             <Link href="#">{translations[language].eventos}</Link>
             <Link href="#">{translations[language].nosotros}</Link>
@@ -68,18 +68,18 @@ export default function NavTransparent() {
               {translations[language].asociados}
             </Link>
           </div>
-          <Link href="/">
+          <Link href="/" className="w-full flex justify-center items-center">
             <Image
               unoptimized
               src={`/assets/images/nav_logo.png`}
               width={0}
               height={0}
               alt="Logo"
-              className="h-[60px] w-auto"
+              className="h-[60px] 2xl:h-[90px] w-auto"
             />
           </Link>
-          <div className="hidden text-white w-full md:grid grid-cols-[70%_17%] justify-between gap-3 items-center">
-            <div className="w-full flex justify-center gap-8 items-center">
+          <div className="hidden text-white w-full md:flex flex-row justify-end gap-10 items-center">
+            <div className="w-full flex justify-end gap-8 items-center">
               <Link href={"/pquina-qocha"}>
                 <Image
                   unoptimized
@@ -87,7 +87,7 @@ export default function NavTransparent() {
                   height={0}
                   width={0}
                   alt="Puquina Q´ocha"
-                  className="w-auto h-[60px]"
+                  className="w-auto h-[60px] 2xl:h-[90px]"
                 />
               </Link>
               <Link
@@ -100,12 +100,12 @@ export default function NavTransparent() {
                   height={0}
                   width={0}
                   alt="Puquina Q´ocha"
-                  className="w-auto h-[60px]"
+                  className="w-auto h-[60px] 2xl:h-[90px]"
                 />
               </Link>
             </div>
-            <div className="w-full h-full items-center gap-3 flex">
-              <div className="flex flex-row gap-1 font-bold z-[99999]">
+            <div className="h-full items-center justify-end gap-3 flex">
+              <div className="flex flex-row gap-1 font-bold z-[99999] text-sm xl:text-base 2xl:text-2xl">
                 <span
                   className={`cursor-pointer ${
                     language === "es" ? "text-muted-foreground" : ""
@@ -128,7 +128,7 @@ export default function NavTransparent() {
           </div>
         </div>
 
-        <div className="w-full grid grid-cols-[auto_50%_auto] gap-1 items-center justify-between p-3 text-base z-[9999] md:hidden">
+        <div className="w-full grid grid-cols-3 md:grid-cols-[auto_50%_auto] gap-1 items-center justify-between px-3 sm:px-5 py-3 md:px-10 text-base z-[9999] lg:hidden">
           <div className="w-full flex flex-row gap-3 items-center">
             <Link href={"/pquina-qocha"}>
               <Image
@@ -137,7 +137,7 @@ export default function NavTransparent() {
                 height={0}
                 width={0}
                 alt="Puquina Q´ocha"
-                className="w-auto h-[30px]"
+                className="w-auto h-[20px] min-[450px]:h-[30px] sm:h-[40px] md:h-[60px]"
               />
             </Link>
             <Link
@@ -150,22 +150,22 @@ export default function NavTransparent() {
                 height={0}
                 width={0}
                 alt="Puquina Q´ocha"
-                className="w-auto h-[30px]"
+                className="w-auto h-[20px] min-[450px]:h-[30px] sm:h-[40px] md:h-[60px]"
               />
             </Link>
           </div>
-          <Link href="/">
+          <Link href="/" className="w-full flex justify-center">
             <Image
               unoptimized
               src={`/assets/images/nav_logo.png`}
               width={0}
               height={0}
               alt="Logo"
-              className="h-auto w-auto "
+              className=" h-[20px] min-[450px]:h-[30px] sm:h-[40px] md:h-[60px] w-auto "
             />
           </Link>
-          <div className="w-[85px] flex flex-row justify-between items-center">
-            <div className="flex flex-row gap-1 font-bold text-[10px]">
+          <div className="w-full md:w-[85px] flex flex-row gap-2 justify-end items-center">
+            <div className="flex flex-row gap-1 font-bold text-[10px] sm:text-xs md:text-sm">
               <span
                 className={`cursor-pointer ${
                   language == "es" ? "text-muted-foreground" : "text-white"
@@ -184,7 +184,7 @@ export default function NavTransparent() {
                 EN
               </span>
             </div>
-            <IoMdMenu color="white" size={30} onClick={toggleSlider} />
+            <IoMdMenu color="white" className="text-xs sm:text-sm md:text-xl" onClick={toggleSlider} />
           </div>
         </div>
       </div>

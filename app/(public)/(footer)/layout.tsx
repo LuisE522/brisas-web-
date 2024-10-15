@@ -10,9 +10,9 @@ export default function FooterLayout({
   return (
     <>
       <ScrollBoton />
-      <div className="w-full absolute top-0 z-50">
+      {<div className="w-full absolute top-0 z-50">
         <NavTransparent />
-      </div>
+      </div>}
       {children}
       <Footer />
     </>

@@ -204,7 +204,10 @@ export default function GameArea() {
       } else if (window.innerWidth < 768) {
         setWidthGrid(200);
         setHeightGrid(280);
-      } else {
+      } else if (window.innerWidth > 1536) {
+        setWidthGrid(500);
+        setHeightGrid(580);
+      }else {
         console.log("Por defecto")
         setWidthGrid(300);
         setHeightGrid(380);

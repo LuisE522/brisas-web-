@@ -83,7 +83,7 @@ export default function FundadoresHotSpot({
         className="w-full h-auto"
       />
       <div className="absolute w-full bottom-12 z-50">
-        <div className="max-w-[95%] w-[1080px] mx-auto">
+        <div className="max-w-[95%] w-[1333px] mx-auto">
           <CaroucelTarjetas />
         </div>
       </div>
