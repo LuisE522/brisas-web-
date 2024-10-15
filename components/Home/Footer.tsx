@@ -198,7 +198,7 @@ export default function Footer() {
             className="w-[70%] h-auto"
           />
 
-          <div className="w-full flex flex-row gap-3 justify-between">
+          <div className="w-full flex flex-row gap-3 justify-center">
             <div className="w-fit p-2 lg:p-0 lg:w-full h-full bg-black rounded-lg flex justify-center items-center">
               <FaFacebookF color="white" size={25} />
             </div>
