@@ -162,7 +162,7 @@ export default function Danzas() {
                 <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                   {translations[language].danza_diablada_destacado_titulo}
                 </h1>
-                <p className="text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-base 2xl:text-xl">
+                <p className="text-[7px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
                   {translations[language].danza_diablada_destacado_descripcion}
                 </p>
               </div>
@@ -181,7 +181,7 @@ export default function Danzas() {
                 <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                   {translations[language].danza_caporales_titulo}
                 </h1>
-                <p className="text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-base 2xl:text-xl">
+                <p className="text-[7px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
                   {translations[language].danza_caporales_descripcion}
                 </p>
               </div>
@@ -200,7 +200,7 @@ export default function Danzas() {
                 <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                   {translations[language].danza_sikuris_titulo}
                 </h1>
-                <p className="text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-base 2xl:text-xl">
+                <p className="text-[7px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
                   {translations[language].danza_sikuris_descripcion}
                 </p>
               </div>
@@ -219,7 +219,7 @@ export default function Danzas() {
                 <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                   {translations[language].danza_morenada_titulo}
                 </h1>
-                <p className="text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-base 2xl:text-xl">
+                <p className="text-[7px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
                   {translations[language].danza_morenada_descripcion}
                 </p>
               </div>
@@ -238,7 +238,7 @@ export default function Danzas() {
                 <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                 {translations[language].danza_kullawa_titulo}
                 </h1>
-                <p className="text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-base 2xl:text-xl">
+                <p className="text-[7px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
                 {translations[language].danza_kullawa_descripcion}
                 </p>
               </div>
@@ -441,7 +441,7 @@ export default function Danzas() {
       {/* Separacion con degradado*/}
 
       <div className="min-h-screen w-full bg-[#121212] flex flex-col">
-        <div className="-mt-56 md:-mt-36 flex flex-col gap-20 md:gap-32">
+        <div className="-mt-36 flex flex-col gap-20 md:gap-32">
           <div className="max-w-[95%] w-[500px] md:w-[800px] lg:w-[1080px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
             <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-center flex-col md:gap-3 z-50">
               <h1
@@ -451,7 +451,7 @@ export default function Danzas() {
                 {translations[language].danza_llamerada_titulo}
               </h1>
               <p
-                className="text-white text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl"
+                className="text-white text-[7px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl"
               >
                 {translations[language].danza_llamerada_descripcion}
               </p>
@@ -485,7 +485,7 @@ export default function Danzas() {
                   {translations[language].danza_carnaval_de_arapa_titulo}
                 </h1>
                 <p
-                  className="text-white text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl"
+                  className="text-white text-[7px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl"
                 >
                   {translations[language].danza_carnaval_de_arapa_descripcion}
                 </p>
@@ -509,7 +509,7 @@ export default function Danzas() {
                   {translations[language].danza_tucumanos_titulo}
                 </h1>
                 <p
-                  className="text-white text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl"
+                  className="text-white text-[7px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl"
                 >
                   {translations[language].danza_tucumanos_descripcion}
                 </p>
@@ -533,7 +533,7 @@ export default function Danzas() {
                   {translations[language].danza_pandilla_punenia_titulo}
                 </h1>
                 <p
-                  className="text-white text-[6px] sm:text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl"
+                  className="text-white text-[7px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl"
                 >
                   {translations[language].danza_pandilla_punenia_descripcion}
                 </p>
