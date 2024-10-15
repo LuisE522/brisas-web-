@@ -148,8 +148,8 @@ export default function Danzas() {
 
           {/* comienzo de las danzas mas importantes */}
 
-          <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto flex flex-col gap-20 md:gap-32">
-            <div className="w-full h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+          <div className="max-w-[90%] w-[500px] md:w-[800px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto flex flex-col gap-20 md:gap-32">
+            <div className="w-full h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
               <Image
                 unoptimized
                 src="/assets/images/danzas/personaje9.png"
@@ -168,7 +168,7 @@ export default function Danzas() {
               </div>
             </div>
 
-            <div className="w-full h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center flex-row-reverse gap-3 danzasFade">
+            <div className="w-full h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center flex-row-reverse gap-3 danzasFade">
               <Image
                 unoptimized
                 src="/assets/images/danzas/personaje1.png"
@@ -187,7 +187,7 @@ export default function Danzas() {
               </div>
             </div>
 
-            <div className="w-full h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+            <div className="w-full h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
               <Image
                 unoptimized
                 src="/assets/images/danzas/personaje2.png"
@@ -206,7 +206,7 @@ export default function Danzas() {
               </div>
             </div>
 
-            <div className="w-full h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center flex-row-reverse gap-3 danzasFade">
+            <div className="w-full h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center flex-row-reverse gap-3 danzasFade">
               <Image
                 unoptimized
                 src="/assets/images/danzas/personaje3.png"
@@ -225,7 +225,7 @@ export default function Danzas() {
               </div>
             </div>
 
-            <div className="w-full h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+            <div className="w-full h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
               <Image
                 unoptimized
                 src="/assets/images/danzas/personaje4.png"
@@ -441,8 +441,8 @@ export default function Danzas() {
       {/* Separacion con degradado*/}
 
       <div className="min-h-screen w-full bg-[#121212] flex flex-col">
-        <div className="-mt-56 md:-mt-36 flex flex-col gap-20 md:gap-32">
-          <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+        <div className="max-w-[90%] w-[500px] md:w-[800px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto -mt-56 md:-mt-36 flex flex-col gap-20 md:gap-32">
+          <div className="h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
             <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-center flex-col md:gap-3 z-50">
               <h1
                 className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none"
@@ -476,7 +476,7 @@ export default function Danzas() {
               className="absolute w-full h-auto"
             />
 
-            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex flex-row-reverse gap-3 justify-center danzasFade">
+            <div className="h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex flex-row-reverse gap-3 justify-center danzasFade">
               <div className="h-full top-0 right-0 w-[50%] md:w-[40%] flex justify-center flex-col md:gap-3 z-50">
                 <h1
                   className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none"
@@ -500,7 +500,7 @@ export default function Danzas() {
               />
             </div>
 
-            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex gap-3 justify-center danzasFade">
+            <div className="h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex gap-3 justify-center danzasFade">
               <div className="h-full  top-0 left-0 w-[50%] md:w-[40%] flex justify-center flex-col md:gap-3 z-50">
                 <h1
                   className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none"
@@ -524,7 +524,7 @@ export default function Danzas() {
               />
             </div>
 
-            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex flex-row-reverse gap-3 justify-center danzasFade">
+            <div className="h-[130px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex flex-row-reverse gap-3 justify-center danzasFade">
               <div className="h-full top-0 right-0 w-[50%] md:w-[40%] flex justify-center flex-col md:gap-3 z-50">
                 <h1
                   className="bebas-neue text-white text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none"
