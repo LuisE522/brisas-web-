@@ -244,11 +244,11 @@ export default function GameArea() {
         <div
           className="grid gap-1 md:gap-3"
           style={{
-            gridTemplateColumns: `repeat(${initialColumns}, 1fr)`, // Definir el número de columnas
-            width: `${initialColumns * widthGrid}px`, // Ajustar el ancho total
+            gridTemplateColumns: `repeat(${initialColumns}, 1fr)`,
+            width: `${initialColumns * widthGrid}px`,
             height: `${
               Math.ceil(visibleImages.length / initialColumns) * heightGrid
-            }px`, // Ajustar la altura total
+            }px`,
           }}
         >
           {visibleImages.map((src, index) => (
@@ -259,7 +259,7 @@ export default function GameArea() {
                 event.stopPropagation();
                 handleMouseDown(event);
               }}
-              onClick={(e) => handleImageClick(src, e)} // Agregar clic para mostrar imagen
+              onClick={(e) => handleImageClick(src, e)}
             >
               <img
                 src={src.image}
@@ -272,43 +272,60 @@ export default function GameArea() {
       </div>
 
       {isImageModalOpen && (
-  <div className="fixed top-0 left-0 w-full h-screen bg-white flex justify-end items-center z-50 transition-all p-10 overflow-y-auto">
-    <span
-      className="absolute top-5 left-5 p-2 text-xl font-extrabold cursor-pointer z-50"
-      onClick={() => setImageModalOpen(false)}
-    >
-      x
-    </span>
-    <div className="w-full h-auto relative p-2 mt-28 md:mt-0">
-      <div className="w-full h-full flex flex-col-reverse gap-5 md:grid md:grid-cols-[65%_33%] md:gap-0 p-2 justify-between">
-        <div className="w-full h-full gap-5 flex flex-col items-center md:items-start justify-center md:justify-center">
-          <h1 className="text-4xl md:text-6xl bebas-neue font-semibold uppercase">
-            {language === "es" ? (
-              <>{selectedImage?.nombre.es}</>
-            ) : (
-              <>{selectedImage?.nombre.en}</>
-            )}
-          </h1>
-          <p className="text-sm">
-            {language === "es" ? (
-              <>{selectedImage?.descripcion.es}</>
-            ) : (
-              <>{selectedImage?.descripcion.en}</>
-            )}
-          </p>
-        </div>
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="fixed top-0 left-0 w-full h-screen bg-white flex justify-end items-center z-50 transition-all p-10 overflow-y-auto md:overflow-hidden">
+          <span
+            className="absolute top-5 left-5 p-2 text-xl font-extrabold cursor-pointer z-50"
+            onClick={() => setImageModalOpen(false)}
+          >
+            x
+          </span>
           <img
-            src={selectedImage?.image}
-            alt="Selected"
-            className="w-[300px] h-auto object-cover rounded-lg"
+            src="/assets/images/danzas/mancha7.png"
+            className="w-[500px] h-auto absolute top-0 left-0"
           />
+          <img
+            src="/assets/images/danzas/mancha6.png"
+            className="w-auto h-full hidden md:block absolute top-0 right-0 "
+          />
+          <div className="w-full h-auto relative p-2 mt-28 md:mt-0">
+            <div className="w-full h-full flex flex-col-reverse gap-5 md:grid md:grid-cols-[65%_33%] md:gap-0 p-2 justify-between">
+              <div className="w-full h-full gap-5 flex flex-col items-center md:items-start justify-center md:justify-center">
+                <h1 className="text-4xl md:text-6xl bebas-neue font-semibold uppercase">
+                  {language === "es" ? (
+                    <>{selectedImage?.nombre.es}</>
+                  ) : (
+                    <>{selectedImage?.nombre.en}</>
+                  )}
+                </h1>
+                <p className="text-sm">
+                  {language === "es" ? (
+                    <>{selectedImage?.descripcion.es}</>
+                  ) : (
+                    <>{selectedImage?.descripcion.en}</>
+                  )}
+                </p>
+              </div>
+              <div className="w-full h-full flex items-center justify-center relative">
+                <div className="w-[300px] h-full relative">
+                  <img
+                    src="/assets/images/danzas/info_danza_planta2.png"
+                    className="h-full w-auto absolute top-0 -left-32 md:-left-24 lg:-left-32 -z-10"
+                  />
+                  <img
+                    src={selectedImage?.image}
+                    alt="Selected"
+                    className="w-full h-auto object-cover rounded-lg"
+                  />
+                  <img
+                    src="/assets/images/danzas/info_danza_planta1.png"
+                    className="h-[130px] lg:h-[150px] w-auto absolute -bottom-4 -right-14  "
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-)}
-
+      )}
     </>
   );
 }
