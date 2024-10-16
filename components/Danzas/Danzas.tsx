@@ -90,22 +90,22 @@ export default function Danzas() {
 
       {/* Texto del centro */}
       <div className="w-full h-[250px] sm:h-[350px] md:h-screen bg-black">
-        <div className="mx-auto w-[300px] md:w-[600px] h-full !relative">
+        <div className="mx-auto w-[300px] md:w-[600px] 2xl:w-[900px] h-full !relative">
           <div className="h-full w-full flex flex-col gap-1 items-center justify-center text-white text-center">
             <span
-              className="text-[10px] sm:text-sm md:text-base"
+              className="text-[10px] sm:text-sm md:text-base 2xl:text-xl"
               style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
             >
               {translations[language].danza_subtitulo}
             </span>
             <h1
-              className="text-2xl md:text-5xl lg:text-7xl font-bold"
+              className="text-2xl md:text-4xl lg:text-6xl 2xl:text-8xl font-bold"
               style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
             >
               {translations[language].danza_titulo}
             </h1>
             <span
-              className="text-[10px] sm:text-sm md:text-base max-w-[95%] mx-auto w-[500px]"
+              className="text-[10px] sm:text-sm md:text-base 2xl:text-xl max-w-[95%] mx-auto w-[500px]"
               style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 2)" }}
             >
               {translations[language].danza_descripcion}
@@ -148,8 +148,8 @@ export default function Danzas() {
 
           {/* comienzo de las danzas mas importantes */}
 
-          <div className="max-w-[90%] w-[500px] md:w-[800px] lg:w-[1080px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto flex flex-col gap-20 md:gap-32">
-            <div className="w-full h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+          <div className="w-full flex flex-col gap-20 md:gap-32">
+            <div className="max-w-[90%] w-[500px] md:w-[800px] lg:w-[1080px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto  h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
               <Image
                 unoptimized
                 src="/assets/images/danzas/personaje9.png"
@@ -158,7 +158,15 @@ export default function Danzas() {
                 height={0}
                 className="h-full w-auto"
               />
-              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+              <div className="h-full top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50 relative">
+                <Image
+                  unoptimized
+                  src="/assets/images/danzas/macha_diablada.png"
+                  alt="alt"
+                  width={0}
+                  height={0}
+                  className="w-full h-full absolute top-0 left-0"
+                />
                 <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                   {translations[language].danza_diablada_destacado_titulo}
                 </h1>
@@ -168,7 +176,7 @@ export default function Danzas() {
               </div>
             </div>
 
-            <div className="w-full h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center flex-row-reverse gap-3 danzasFade">
+            <div className="max-w-[90%] w-[500px] md:w-[800px] lg:w-[1080px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto  h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center flex-row-reverse gap-3 danzasFade">
               <Image
                 unoptimized
                 src="/assets/images/danzas/personaje1.png"
@@ -177,7 +185,15 @@ export default function Danzas() {
                 height={0}
                 className="h-full w-auto"
               />
-              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50 relative">
+                <Image
+                  unoptimized
+                  src="/assets/images/danzas/mancha_caporales.png"
+                  alt="alt"
+                  width={0}
+                  height={0}
+                  className="w-full scale-125 h-full absolute top-0"
+                />
                 <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                   {translations[language].danza_caporales_titulo}
                 </h1>
@@ -187,7 +203,36 @@ export default function Danzas() {
               </div>
             </div>
 
-            <div className="w-full h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+            <div className="w-full h-auto relative">
+              <Image
+                unoptimized
+                src="/assets/images/danzas/mancha_morenada.png"
+                alt="alt"
+                width={0}
+                height={0}
+                className="w-[150px] md:w-[220px] lg:w-[400px] h-auto absolute top-0 right-0"
+              />
+              <div className="max-w-[90%] w-[500px] md:w-[800px] lg:w-[1080px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto  h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+                <Image
+                  unoptimized
+                  src="/assets/images/danzas/personaje3.png"
+                  alt="alt"
+                  width={0}
+                  height={0}
+                  className="h-full w-auto"
+                />
+                <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+                  <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
+                    {translations[language].danza_morenada_titulo}
+                  </h1>
+                  <p className="text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
+                    {translations[language].danza_morenada_descripcion}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="max-w-[90%] w-[500px] md:w-[800px] lg:w-[1080px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center flex-row-reverse gap-3 danzasFade">
               <Image
                 unoptimized
                 src="/assets/images/danzas/personaje2.png"
@@ -206,41 +251,32 @@ export default function Danzas() {
               </div>
             </div>
 
-            <div className="w-full h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center flex-row-reverse gap-3 danzasFade">
+            <div className="w-full h-auto relative">
               <Image
                 unoptimized
-                src="/assets/images/danzas/personaje3.png"
+                src="/assets/images/danzas/mancha_kullawa.png"
                 alt="alt"
                 width={0}
                 height={0}
-                className="h-full w-auto"
+                className="w-[130px] md:w-[200px] lg:w-[400px] h-auto absolute top-0"
               />
-              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
-                <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
-                  {translations[language].danza_morenada_titulo}
-                </h1>
-                <p className="text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
-                  {translations[language].danza_morenada_descripcion}
-                </p>
-              </div>
-            </div>
-
-            <div className="w-full h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
-              <Image
-                unoptimized
-                src="/assets/images/danzas/personaje4.png"
-                alt="alt"
-                width={0}
-                height={0}
-                className="h-full w-auto"
-              />
-              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
-                <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
-                {translations[language].danza_kullawa_titulo}
-                </h1>
-                <p className="text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
-                {translations[language].danza_kullawa_descripcion}
-                </p>
+              <div className="max-w-[90%] w-[500px] md:w-[800px] lg:w-[1080px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
+                <Image
+                  unoptimized
+                  src="/assets/images/danzas/personaje4.png"
+                  alt="alt"
+                  width={0}
+                  height={0}
+                  className="h-full w-auto"
+                />
+                <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+                  <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
+                    {translations[language].danza_kullawa_titulo}
+                  </h1>
+                  <p className="text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
+                    {translations[language].danza_kullawa_descripcion}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -450,9 +486,7 @@ export default function Danzas() {
               >
                 {translations[language].danza_llamerada_titulo}
               </h1>
-              <p
-                className="text-white text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl"
-              >
+              <p className="text-white text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
                 {translations[language].danza_llamerada_descripcion}
               </p>
             </div>
@@ -484,9 +518,7 @@ export default function Danzas() {
                 >
                   {translations[language].danza_carnaval_de_arapa_titulo}
                 </h1>
-                <p
-                  className="text-white text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl"
-                >
+                <p className="text-white text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
                   {translations[language].danza_carnaval_de_arapa_descripcion}
                 </p>
               </div>
@@ -508,9 +540,7 @@ export default function Danzas() {
                 >
                   {translations[language].danza_tucumanos_titulo}
                 </h1>
-                <p
-                  className="text-white text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl"
-                >
+                <p className="text-white text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
                   {translations[language].danza_tucumanos_descripcion}
                 </p>
               </div>
@@ -532,9 +562,7 @@ export default function Danzas() {
                 >
                   {translations[language].danza_pandilla_punenia_titulo}
                 </h1>
-                <p
-                  className="text-white text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl"
-                >
+                <p className="text-white text-[8px] min-[400px]:text-[9px] sm:text-[11px] xl:text-base 2xl:text-xl">
                   {translations[language].danza_pandilla_punenia_descripcion}
                 </p>
               </div>
