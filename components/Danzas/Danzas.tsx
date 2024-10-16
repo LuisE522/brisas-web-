@@ -183,16 +183,16 @@ export default function Danzas() {
                 alt="alt"
                 width={0}
                 height={0}
-                className="h-full w-auto"
+                className="h-full w-auto z-50"
               />
-              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50 relative">
+              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 relative">
                 <Image
                   unoptimized
                   src="/assets/images/danzas/mancha_caporales.png"
                   alt="alt"
                   width={0}
                   height={0}
-                  className="w-full scale-125 h-full absolute top-0"
+                  className="w-full scale-150 h-full absolute top-0 left-24 md:left-36 -z-10"
                 />
                 <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                   {translations[language].danza_caporales_titulo}
@@ -221,7 +221,17 @@ export default function Danzas() {
                   height={0}
                   className="h-full w-auto"
                 />
-                <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+                <div className="h-full top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50 relative">
+                <div className="w-full absolute flex justify-center -top-10 md:top-0">
+                    <Image
+                      unoptimized
+                      src="/assets/images/danzas/planta2.png"
+                      alt="alt"
+                      width={0}
+                      height={0}
+                      className="w-[80px] sm:w-[110px] md:w-[250px] xl:w-[300px] h-auto"
+                    />
+                  </div>
                   <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                     {translations[language].danza_morenada_titulo}
                   </h1>
@@ -241,7 +251,17 @@ export default function Danzas() {
                 height={0}
                 className="h-full w-auto"
               />
-              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+              <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50 relative">
+              <div className="w-full absolute flex justify-center -top-14 md:top-0">
+                  <Image
+                    unoptimized
+                    src="/assets/images/danzas/planta3.png"
+                    alt="alt"
+                    width={0}
+                    height={0}
+                    className="w-[100px] sm:w-[130px] md:w-[250px] xl:w-[300px] h-auto"
+                  />
+                </div>
                 <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                   {translations[language].danza_sikuris_titulo}
                 </h1>
@@ -269,7 +289,17 @@ export default function Danzas() {
                   height={0}
                   className="h-full w-auto"
                 />
-                <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50">
+                <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50 relative">
+                <div className="w-full absolute flex justify-center -top-10 md:top-0">
+                  <Image
+                    unoptimized
+                    src="/assets/images/danzas/planta4.png"
+                    alt="alt"
+                    width={0}
+                    height={0}
+                    className="w-[100px] sm:w-[120px] md:w-[250px] xl:w-[300px] h-auto"
+                  />
+                </div>
                   <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                     {translations[language].danza_kullawa_titulo}
                   </h1>

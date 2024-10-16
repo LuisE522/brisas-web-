@@ -8,6 +8,7 @@ import trs from "@/public/locales/translate.json";
 import { IoIosArrowDown } from "react-icons/io";
 import Link from "next/link";
 import FundadoresHotSpot from "../Historia/FundadoresHotSpot";
+import CaroucelHistoria from "../Historia/CaroucelHistoria";
 
 export default function Page2({ fundadores }: { fundadores: any }) {
   const [load, setLoad] = useState(false);
@@ -93,7 +94,7 @@ export default function Page2({ fundadores }: { fundadores: any }) {
         <div className="bg-gradient-to-t from-black to-transparent w-full h-[200px] absolute bottom-0 left-0 -z-10"></div>
 
         <div className="w-full h-[calc(100%-124px)] absolute top-[62px] left-0 -z-10">
-          <div className="relative max-w-[95%] w-[1080px] mx-auto h-full flex flex-col gap-1 items-start justify-center">
+          <div className="relative max-w-[95%] w-[1080px] 2xl:w-[1500px] mx-auto h-full flex flex-col gap-1 items-start justify-center">
             <div className="w-full md:w-[70%] h-auto md:h-full flex flex-col gap-2 items-start justify-center">
               {/* <p className="text-white">
                 {translations[language].info_subtitulo}
@@ -105,11 +106,11 @@ export default function Page2({ fundadores }: { fundadores: any }) {
                 {translations[language].info_titulo}
               </h1> */}
 
-              <h1 className="bebas-neue tracking-tight uppercase text-4xl md:text-6xl text-white">
+              <h1 className="bebas-neue tracking-tight uppercase text-4xl md:text-6xl 2xl:text-8xl text-white">
                 {translations[language].info_titulo}
               </h1>
 
-              <p className="w-full text-white text-base md:text-2xl bebas-neue">
+              <p className="w-full text-white text-base md:text-2xl 2xl:text-4xl bebas-neue">
                 {translations[language].info_descripcion}
               </p>
 
@@ -138,7 +139,7 @@ export default function Page2({ fundadores }: { fundadores: any }) {
       </div>
 
       <div id="img2">
-        <h1 className="text-center text-white text-4xl lg:text-7xl bebas-neue my-4">
+        <h1 className="text-center text-white text-2xl sm:text-6xl 2xl:text-8xl bebas-neue my-4">
           NUESTROS FUNDADORES
         </h1>
         <div className="w-full h-auto lg:h-screen !relative overflow-hidden ">
@@ -153,6 +154,15 @@ export default function Page2({ fundadores }: { fundadores: any }) {
               />
             </Link>
           </div>
+        </div>
+      </div>
+
+      <div id="img3" className="my-20 flex flex-col gap-3 md:gap-10">
+        <h1 className="text-white text-2xl sm:text-6xl 2xl:text-8xl bebas-neue text-center">
+          Past- presidente
+        </h1>
+        <div className="w-[95%] mx-auto">
+          <CaroucelHistoria />
         </div>
       </div>
 

@@ -65,14 +65,14 @@ export default function ListDanzas({ danzas }: { danzas: Danzas_I[] }) {
             />
           </div>
         </div>
-        <div className="w-full grid grid-cols-3 gap-x-3 gap-y-7">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-7">
           {listDanzas.map((danza: Danzas_I, index: number) => (
             <div className="w-full flex flex-col gap-2" key={index}>
               <Link
                 href={`/admin/danza/${danza.slug}`}
                 className="w-full flex justify-end"
               >
-                <div className="w-full h-[200px] bg-slate-400 !relative rounded-lg overflow-hidden">
+                <div className="w-full h-[200px] md:h-[250px] xl:h-[300px] bg-slate-400 !relative rounded-lg overflow-hidden">
                   {danza.image && (
                     <Image
                       /* unoptimized */

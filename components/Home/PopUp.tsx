@@ -34,7 +34,7 @@ export default function PopUp() {
                 <>
                     <div className="fixed inset-0 bg-black bg-opacity-70 z-40" />
                     <div className="fixed inset-0 flex items-center justify-center z-50">
-                        <div className='w-[95%] max-w-[500px] h-auto relative'>
+                        <div className='w-[95%] max-w-[500px] 2xl:max-w-[800px] h-auto relative'>
                             <Image unoptimized src={'/assets/images/popup/popup2.png'} alt='popup' width={0} height={0} className='w-full h-auto ' />
                             <FaCircleXmark onClick={closeModal} size={20} className='mt-4 text-white rounded absolute top-px right-4 cursor-pointer' />
                         </div>

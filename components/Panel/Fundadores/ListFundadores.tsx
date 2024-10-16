@@ -25,7 +25,8 @@ export default function ListFundadores({
 }) {
   const token = getAuthTokenClient();
 
-  const [listFundadores, setListFundadores] = useState<Fundadores_I[]>(fundadores);
+  const [listFundadores, setListFundadores] =
+    useState<Fundadores_I[]>(fundadores);
   const [dialogInfo, setDialogInfo] = useState<Fundadores_I | null>(null);
 
   /* const showDialog = (index: number) => {
@@ -57,13 +58,12 @@ export default function ListFundadores({
   };
 
   const closeCreate = (newFundador: Fundadores_I) => {
-
     /* console.log(newFundador) */
 
     setListFundadores((prevFundador) => [...prevFundador, newFundador]);
   };
 
-  console.log(fundadores)
+  console.log(fundadores);
 
   return (
     <>
@@ -85,7 +85,7 @@ export default function ListFundadores({
             />
           </div>
         </div>
-        <div className="w-full grid grid-cols-3 gap-x-3 gap-y-7">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-7">
           {listFundadores.map((fundador: Fundadores_I, index: number) => (
             <div
               className="w-full flex flex-col gap-2 cursor-pointer"
@@ -93,7 +93,7 @@ export default function ListFundadores({
               onClick={() => showDialog(index)}
             >
               <div className="w-full flex justify-end">
-                <div className="w-full h-[200px] bg-slate-400 !relative rounded-lg overflow-hidden">
+                <div className="w-full h-[200px] md:h-[250px] xl:h-[300px] bg-slate-400 !relative rounded-lg overflow-hidden">
                   {fundador.imagen && (
                     <Image
                       /* unoptimized */

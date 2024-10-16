@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <>
       <div className="bg-black py-10 hidden md:block">
-        <div className="max-w-[95%] w-[1080px] mx-auto flex flex-col gap-10">
+        <div className="max-w-[95%] w-[1080px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto flex flex-col gap-10">
           <div className="w-full grid grid-cols-1 lg:grid-cols-3 justify-between gap-5">
             <Image
               unoptimized

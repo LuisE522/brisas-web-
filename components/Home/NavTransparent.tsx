@@ -38,6 +38,11 @@ export default function NavTransparent() {
     setIsScrolled(window.scrollY > 70);
   };
 
+  const onChangeLanguage = () => {
+    if (language == "es") changeLanguage("en");
+    else changeLanguage("es");
+  };
+
   useEffect(() => {
     // Añadir el evento de scroll
     window.addEventListener("scroll", handleScroll);
@@ -104,13 +109,15 @@ export default function NavTransparent() {
                 />
               </Link>
             </div>
-            <div className="h-full items-center justify-end gap-3 flex">
-              <div className="flex flex-row gap-1 font-bold z-[99999] text-sm xl:text-base 2xl:text-2xl">
+            <div className="h-full items-center justify-end gap-3 flex cursor-pointer">
+              <div
+                className="flex flex-row gap-1 font-bold z-[99999] text-sm xl:text-base 2xl:text-2xl"
+                onClick={onChangeLanguage}
+              >
                 <span
                   className={`cursor-pointer ${
                     language === "es" ? "text-muted-foreground" : ""
                   }`}
-                  onClick={() => changeLanguage("es")}
                 >
                   ESP
                 </span>
@@ -119,7 +126,6 @@ export default function NavTransparent() {
                   className={`cursor-pointer ${
                     language === "en" ? "text-muted-foreground" : ""
                   }`}
-                  onClick={() => changeLanguage("en")}
                 >
                   EN
                 </span>
@@ -184,7 +190,11 @@ export default function NavTransparent() {
                 EN
               </span>
             </div>
-            <IoMdMenu color="white" className="text-xs sm:text-sm md:text-xl" onClick={toggleSlider} />
+            <IoMdMenu
+              color="white"
+              className="text-xs sm:text-sm md:text-xl"
+              onClick={toggleSlider}
+            />
           </div>
         </div>
       </div>
