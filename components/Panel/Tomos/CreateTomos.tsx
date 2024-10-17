@@ -74,7 +74,7 @@ export default function CreateTomos({ onClose }: Props) {
     });
 
     /* console.log(data) */
-    onClose(data);
+    onClose(dataJson);
     closeDialog(false);
   };
 
