@@ -75,7 +75,11 @@ export default function Tomos({ tomos }: any) {
               onClick={() => showDialog(index)}
             >
               <div className="w-full flex justify-end">
-                <div className="w-full h-[200px] md:h-[250px] xl:h-[300px] bg-slate-400 !relative rounded-lg overflow-hidden">
+                <div
+                  className={`w-full h-[200px] md:h-[250px] xl:h-[300px] ${
+                    tomos.image ? "" : "bg-slate-400"
+                  } !relative rounded-lg overflow-hidden`}
+                >
                   {tomos.image && (
                     <Image
                       /* unoptimized */

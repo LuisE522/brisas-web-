@@ -285,3 +285,11 @@ html {
   transform: scale(5);
   opacity: 0;
 } */
+ .font-capital::first-letter {
+  font-size: 3em;
+  margin-left: 20px;
+ }
+
+ .grid-infinito > div:nth-child(odd) {
+  top: 150px;
+}

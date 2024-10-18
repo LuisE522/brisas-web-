@@ -192,7 +192,7 @@ export default function NavTransparent() {
             </div>
             <IoMdMenu
               color="white"
-              className="text-xs sm:text-sm md:text-xl"
+              className="text-xs sm:text-sm md:text-xl cursor-pointer"
               onClick={toggleSlider}
             />
           </div>

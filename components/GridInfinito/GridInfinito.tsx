@@ -6,15 +6,8 @@ import { Danzas_I } from "../Panel/Danzas/ListDanzas";
 import { useLanguage } from "@/context/LanguageProvider";
 import trs from "@/public/locales/translate.json";
 
-// Simulación de imágenes
-const totalImages = 200; // Número total de imágenes
-const images = Array.from(
-  { length: totalImages },
-  (_, i) => `https://picsum.photos/300/600?random=${i + 1}`
-);
-
-const initialColumns = 6; // Número inicial de columnas
-const imagesPerLoad = 10; // Número de imágenes a cargar cada vez
+const initialColumns = 6;
+const imagesPerLoad = 10;
 
 export default function GameArea() {
   const { language } = useLanguage();
@@ -46,11 +39,10 @@ export default function GameArea() {
     target.classList.add("animate-move");
     target.classList.add("z-50");
 
-    // Usar setTimeout para quitar la clase después de la animación
     setTimeout(() => {
       target.classList.remove("animate-move");
       target.classList.remove("z-50");
-    }, 1000); // Duración de la animación
+    }, 1000);
   };
 
   const handleMouseDown = (event: React.MouseEvent) => {
@@ -62,7 +54,7 @@ export default function GameArea() {
         top: containerRef.current.scrollTop,
       });
     }
-    event.preventDefault(); // Prevenir la selección de texto
+    event.preventDefault();
   };
 
   const handleMouseLeave = () => {
@@ -242,7 +234,7 @@ export default function GameArea() {
         style={{ cursor: isDragging ? "grabbing" : "grab" }}
       >
         <div
-          className="grid gap-1 md:gap-3"
+          className="grid gap-3 lg:gap-5 2xl:gap-7 grid-infinito"
           style={{
             gridTemplateColumns: `repeat(${initialColumns}, 1fr)`,
             width: `${initialColumns * widthGrid}px`,
@@ -274,30 +266,30 @@ export default function GameArea() {
       {isImageModalOpen && (
         <div className="fixed top-0 left-0 w-full h-screen bg-white flex justify-end items-center z-50 transition-all p-10 overflow-y-auto md:overflow-hidden">
           <span
-            className="absolute top-5 left-5 p-2 text-xl font-extrabold cursor-pointer z-50"
+            className="absolute top-5 left-5 p-2 text-xl lg:text-2xl xl:text-4xl font-extrabold cursor-pointer z-50"
             onClick={() => setImageModalOpen(false)}
           >
             x
           </span>
           <img
             src="/assets/images/danzas/mancha7.png"
-            className="w-[500px] h-auto absolute top-0 left-0"
+            className="w-[500px] xl:w-[700px] 2xl:w-[800px] h-auto absolute top-0 left-0"
           />
           <img
             src="/assets/images/danzas/mancha6.png"
             className="w-auto h-full hidden md:block absolute top-0 right-0 "
           />
           <div className="w-full h-auto relative p-2 mt-28 md:mt-0">
-            <div className="w-full h-full flex flex-col-reverse gap-5 md:grid md:grid-cols-[65%_33%] md:gap-0 p-2 justify-between">
+            <div className="w-full xl:w-[1280px] 2xl:w-[1536px] mx-auto h-full flex flex-col-reverse gap-5 md:grid md:grid-cols-[65%_33%] md:gap-0 p-2 justify-between">
               <div className="w-full h-full gap-5 flex flex-col items-center md:items-start justify-center md:justify-center">
-                <h1 className="text-4xl md:text-6xl bebas-neue font-semibold uppercase">
+                <h1 className="text-4xl md:text-6xl 2xl:text-8xl bebas-neue font-semibold uppercase">
                   {language === "es" ? (
                     <>{selectedImage?.nombre.es}</>
                   ) : (
                     <>{selectedImage?.nombre.en}</>
                   )}
                 </h1>
-                <p className="text-sm">
+                <p className="text-sm 2xl:text-2xl">
                   {language === "es" ? (
                     <>{selectedImage?.descripcion.es}</>
                   ) : (
@@ -306,7 +298,7 @@ export default function GameArea() {
                 </p>
               </div>
               <div className="w-full h-full flex items-center justify-center relative">
-                <div className="w-[300px] h-full relative">
+                <div className="w-[300px] 2xl:w-full h-full relative">
                   <img
                     src="/assets/images/danzas/info_danza_planta2.png"
                     className="h-full w-auto absolute top-0 -left-32 md:-left-24 lg:-left-32 -z-10"

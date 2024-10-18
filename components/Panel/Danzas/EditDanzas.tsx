@@ -32,8 +32,15 @@ interface Props {
 export default function EditDanzas({ danza, onClose }: Props) {
   const [open, setOpen] = useState(true);
 
-  const [nombre, setNombre] = useState<any>(danza.nombre);
-  const [descripcion, setDescripcion] = useState<any>(danza.descripcion);
+  const [nombre, setNombre] = useState({
+    es: danza.nombre.es,
+    en: danza.nombre.en,
+  });
+
+  const [descripcion, setDescripcion] = useState({
+    es: danza.descripcion.es,
+    en: danza.descripcion.en,
+  });
   const [image, setImage] = useState<string>(danza.image);
 
   const token = getAuthTokenClient();
@@ -43,12 +50,12 @@ export default function EditDanzas({ danza, onClose }: Props) {
       id: danza.id,
       nombre,
       descripcion,
-      imagen: image,
+      image,
     };
 
     const editUserToast = toast.loading("Actualizando...");
 
-    const userUpdate = await fetch(`${API_URL}/danzas/updatedanzas`, {
+    const userUpdate = await fetch(`${API_URL}/danzas/updatedanzas/${danza.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -92,15 +99,30 @@ export default function EditDanzas({ danza, onClose }: Props) {
           <DialogHeader>
             <DialogTitle>Editar danza</DialogTitle>
             <DialogDescription className="w-full flex flex-col pt-5 gap-5">
-              <div className="grid w-full items-center gap-1.5">
-                <Label htmlFor="nombre">Nombre</Label>
-                <Input
-                  autoFocus
-                  type="text"
-                  id="nombre"
-                  value={nombre}
-                  onChange={(e: any) => setNombre(e.target.value)}
-                />
+              <div className="w-full grid grid-cols-2 gap-1.5">
+                <div className="grid w-full items-center gap-1.5">
+                  <Label htmlFor="nombre-es">Nombre (ES)</Label>
+                  <Input
+                    autoFocus
+                    type="text"
+                    id="nombre-es"
+                    value={nombre.es}
+                    onChange={(e: any) =>
+                      setNombre({ ...nombre, es: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="grid w-full items-center gap-1.5">
+                  <Label htmlFor="nombre-en">Nombre (EN)</Label>
+                  <Input
+                    type="text"
+                    id="nombre-en"
+                    value={nombre.en}
+                    onChange={(e: any) =>
+                      setNombre({ ...nombre, en: e.target.value })
+                    }
+                  />
+                </div>
               </div>
               <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="image">Imagen</Label>
@@ -112,12 +134,25 @@ export default function EditDanzas({ danza, onClose }: Props) {
                 />
               </div>
               <div className="grid w-full items-center gap-1.5">
-                <Label htmlFor="descripcion">Descripcion</Label>
+                <Label htmlFor="descripcion-es">Descripción (Español)</Label>
                 <Textarea
-                  rows={7}
-                  id="descripcion"
-                  value={descripcion}
-                  onChange={(e: any) => setDescripcion(e.target.value)}
+                  rows={5}
+                  id="descripcion-es"
+                  value={descripcion.es}
+                  onChange={(e) =>
+                    setDescripcion({ ...descripcion, es: e.target.value })
+                  }
+                />
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label htmlFor="descripcion-en">Descripción (Inglés)</Label>
+                <Textarea
+                  rows={5}
+                  id="descripcion-en"
+                  value={descripcion.en}
+                  onChange={(e) =>
+                    setDescripcion({ ...descripcion, en: e.target.value })
+                  }
                 />
               </div>
 

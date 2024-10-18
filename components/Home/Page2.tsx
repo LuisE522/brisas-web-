@@ -131,7 +131,7 @@ export default function Page2({ fundadores }: { fundadores: any }) {
                 a Lima con sus tradiciones, danzas, música y costumbres. Es
                 decir, con toda su cultura a cuestas. Y no solo era la nostalgia
                 por el terruño, sino también el empeñó por difundir la cultura
-                altiplánica en la capital del Perú. editado :V
+                altiplánica en la capital del Perú.
               </span>
             </div>
           </div>

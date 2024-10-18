@@ -15,12 +15,16 @@ import Image from "next/image";
 import Link from "next/link";
 import CreateContenido from "./Contenido/CreateContenido";
 import { toast } from "react-toastify";
+import EditContenido from "./Contenido/EditContenido";
 
 export default function ShowTomo({ tomo }: { tomo: TomosWithContenido_I }) {
   /* console.log(tomo); */
 
   const [titulo, setTitulo] = useState(tomo.titulo);
   const [image, setImage] = useState<string>(tomo.image);
+  const [dialogInfoContenido, setDialogInfoContenido] =
+    useState<Contenido_I | null>(null);
+  const [showDialogInfoContenido, setShowDialogInfoContenido] = useState(false);
 
   const [listContenido, setListContenido] = useState<Contenido_I[]>(
     tomo.contenidos
@@ -66,12 +70,14 @@ export default function ShowTomo({ tomo }: { tomo: TomosWithContenido_I }) {
     /* console.log(res); */
   };
 
-  const showDialog = (index: number) => {
-    /* setDialogInfo(listFundadores[index]); */
+  const showDialogContenido = (index: number) => {
+    setDialogInfoContenido(listContenido[index]);
+    setShowDialogInfoContenido(true);
   };
 
-  const onDialogClose = () => {
-    /* setDialogInfo(null); */
+  const onDialogClose = (updateContenido: Contenido_I | null) => {
+    setDialogInfoContenido(null);
+    setShowDialogInfoContenido(false);
   };
 
   const closeCreate = (newContenido: Contenido_I) => {
@@ -142,7 +148,7 @@ export default function ShowTomo({ tomo }: { tomo: TomosWithContenido_I }) {
               <div
                 className="w-full flex flex-col gap-2.5 cursor-pointer"
                 key={index}
-                onClick={() => showDialog(index)}
+                onClick={() => showDialogContenido(index)}
               >
                 <div className="w-full flex justify-end">
                   <div className="w-full h-[200px] md:h-[250px] xl:h-[300px] bg-slate-400 !relative rounded-lg overflow-hidden">
@@ -177,6 +183,18 @@ export default function ShowTomo({ tomo }: { tomo: TomosWithContenido_I }) {
         <TinyEditor />
       </div> */}
       </div>
+
+      {showDialogInfoContenido && (
+        <>
+          {dialogInfoContenido && (
+            <EditContenido
+              contenido={dialogInfoContenido}
+              tomoId={tomo.id}
+              onClose={onDialogClose}
+            />
+          )}
+        </>
+      )}
     </>
   );
 }

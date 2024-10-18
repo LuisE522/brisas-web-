@@ -176,7 +176,7 @@ export default function Puquina() {
               <div
                 key={index}
                 className="w-full relative h-80 overflow-hidden rounded-lg grid grid-rows-[60%_37%] justify-between"
-                style={{ boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.5);" }}
+                style={{ boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.5)" }}
               >
                 <Image
                   src={`${entrada.imagen}`}

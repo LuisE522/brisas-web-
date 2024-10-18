@@ -125,7 +125,7 @@ export default function CreateFundadores({ onClose }: Props) {
     <>
       <Dialog open={open} onOpenChange={(open) => closeDialog(open)}>
         <DialogTrigger className="flex flex-row gap-1 items-center text-sm lg:text-xl">
-          <IoIosCreate /> Crear danza
+          <IoIosCreate /> Registrar fundador
         </DialogTrigger>
         <DialogContent className="dark text-white">
           <DialogHeader>

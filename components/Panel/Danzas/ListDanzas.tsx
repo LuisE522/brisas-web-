@@ -5,6 +5,7 @@ import CreateDanzas from "./CreateDanzas";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import EditDanzas from "./EditDanzas";
 
 export interface Danzas_I {
   id: number;
@@ -24,14 +25,15 @@ export default function ListDanzas({ danzas }: { danzas: Danzas_I[] }) {
   const token = getAuthTokenClient();
 
   const [listDanzas, setListDanzas] = useState<Danzas_I[]>(danzas);
+  const [dialogInfo, setDialogInfo] = useState<Danzas_I | null>(null);
 
-  /* const showDialog = (index: number) => {
-    setDialogInfo(listUser[index]);
+  const showDialog = (index: number) => {
+    setDialogInfo(listDanzas[index]);
   };
 
   const onDialogClose = () => {
     setDialogInfo(null);
-  }; */
+  };
 
   const closeCreate = () => {};
 
@@ -67,11 +69,12 @@ export default function ListDanzas({ danzas }: { danzas: Danzas_I[] }) {
         </div>
         <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-7">
           {listDanzas.map((danza: Danzas_I, index: number) => (
-            <div className="w-full flex flex-col gap-2" key={index}>
-              <Link
-                href={`/admin/danza/${danza.slug}`}
-                className="w-full flex justify-end"
-              >
+            <div
+              className="w-full flex flex-col gap-2 cursor-pointer"
+              key={index}
+              onClick={() => showDialog(index)}
+            >
+              <div className="w-full flex justify-end">
                 <div className="w-full h-[200px] md:h-[250px] xl:h-[300px] bg-slate-400 !relative rounded-lg overflow-hidden">
                   {danza.image && (
                     <Image
@@ -90,7 +93,7 @@ export default function ListDanzas({ danzas }: { danzas: Danzas_I[] }) {
                     </span>
                   </div> */}
                 </div>
-              </Link>
+              </div>
               <div className="w-full relative text-white z-10 flex flex-col gap-1">
                 <h1 className="font-semibold">{danza.nombre.es}</h1>
               </div>
@@ -98,6 +101,8 @@ export default function ListDanzas({ danzas }: { danzas: Danzas_I[] }) {
           ))}
         </div>
       </div>
+
+      {dialogInfo && <EditDanzas danza={dialogInfo} onClose={onDialogClose} />}
     </>
   );
 }
