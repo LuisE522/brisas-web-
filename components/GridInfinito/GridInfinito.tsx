@@ -280,7 +280,7 @@ export default function GameArea() {
             className="w-auto h-full hidden md:block absolute top-0 right-0 "
           />
           <div className="w-full h-auto relative p-2 mt-28 md:mt-0">
-            <div className="w-full xl:w-[1280px] 2xl:w-[1536px] mx-auto h-full flex flex-col-reverse gap-5 md:grid md:grid-cols-[65%_33%] md:gap-0 p-2 justify-between">
+            <div className="w-full xl:w-[1280px] 2xl:w-[1536px] mx-auto h-full flex flex-col-reverse gap-5 md:grid md:grid-cols-2 md:gap-0 p-2 justify-between">
               <div className="w-full h-full gap-5 flex flex-col items-center md:items-start justify-center md:justify-center">
                 <h1 className="text-4xl md:text-6xl 2xl:text-8xl bebas-neue font-semibold uppercase">
                   {language === "es" ? (
@@ -298,7 +298,7 @@ export default function GameArea() {
                 </p>
               </div>
               <div className="w-full h-full flex items-center justify-center relative">
-                <div className="w-[300px] 2xl:w-full h-full relative">
+                <div className="w-[300px] 2xl:w-[600px] h-full relative">
                   <img
                     src="/assets/images/danzas/info_danza_planta2.png"
                     className="h-full w-auto absolute top-0 -left-32 md:-left-24 lg:-left-32 -z-10"

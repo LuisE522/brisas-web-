@@ -26,10 +26,26 @@ export default function CaroucelTarjetas() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fadeClass, setFadeClass] = useState("opacity-100'");
 
+  const [hoverTarjeta, setHoverTarjeta] = useState(0);
+  const [animationShowInfo, setAnimationShowInfo] = useState(false);
+
   const onShowInfoTarjeta = (index: number) => {
     if (tomos != null) setInfoTarjeta(tomos[index].contenidos);
     setShowInfoTarjeta(true);
     setCurrentIndex(0);
+
+    setTimeout(() => {
+      setAnimationShowInfo(true);
+    }, 0);
+  };
+
+  const onCloseShowInfoTarjeta = () => {
+    setAnimationShowInfo(false);
+
+    // Esperar que la animación de desvanecimiento se complete antes de ocultar
+    setTimeout(() => {
+      setShowInfoTarjeta(false);
+    }, 500); // Este tiempo debe coincidir con la duración de la animación
   };
 
   const handleNext = () => {
@@ -79,6 +95,15 @@ export default function CaroucelTarjetas() {
 
   /* console.log(infoTarjeta); */
 
+  const onMouseHover = (index: number) => {
+    console.log(index);
+    setHoverTarjeta(index);
+  };
+
+  const onMouseLeave = () => {
+    setHoverTarjeta(0);
+  };
+
   if (loading) {
     return <></>;
   }
@@ -90,8 +115,10 @@ export default function CaroucelTarjetas() {
           {tomos.map((tarjeta: TomosWithContenido_I, index: number) => (
             <SwiperSlide
               key={index}
-              className="!relative  cursor-pointer w-[280px] lg:w-[320px] "
+              className="!relative  cursor-pointer w-[280px] lg:w-[320px] overflow-hidden rounded-lg"
               onClick={() => onShowInfoTarjeta(index)}
+              onMouseEnter={() => onMouseHover(index + 1)}
+              onMouseLeave={onMouseLeave}
             >
               <Image
                 unoptimized
@@ -99,7 +126,9 @@ export default function CaroucelTarjetas() {
                 alt="alt"
                 width={0}
                 height={0}
-                className="object-cover h-[70px] sm:h-[100px] md:h-[120px] lg:h-[160px] xl:h-[200px] w-full"
+                className={`object-cover h-[70px] sm:h-[100px] md:h-[120px] lg:h-[160px] xl:h-[200px] w-full transition-all duration-700 ${
+                  hoverTarjeta == index + 1 ? "scale-125" : ""
+                }`}
               />
               <div className="absolute w-full h-full bg-[#121212]/60 top-0"></div>
               <div className="absolute w-full h-full grid grid-cols-[80%_17%] p-2 md:p-5 justify-between items-center top-0">
@@ -122,56 +151,62 @@ export default function CaroucelTarjetas() {
       {showInfoTarjeta && (
         <>
           {infoTarjeta != null && (
-            <div className="w-full h-screen left-0 top-0 fixed bg-black z-[999] grid grid-cols-[70%_30%]">
-              <div className="w-full h-screen bg-white relative flex justify-center items-center">
-                <div className="w-full h-screen absolute p-3 md:p-10">
-                  <div className="w-full h-full flex flex-col justify-between items-center text-white text-[8px] md:text-xl xl:text-4xl relative 2xl:text-5xl">
-                    <div className=" rounded-full bg-black/20 p-1 flex justify-center items-center">
-                      <IoIosArrowUp
-                        className="cursor-pointer"
-                        onClick={handlePrevious}
-                      />
-                    </div>
-                    <div className=" rounded-full bg-black/20 p-1 flex justify-center items-center">
-                      <IoIosArrowDown
-                        className="cursor-pointer"
-                        onClick={handleNext}
-                      />
+            <div
+              className={`w-full h-screen left-0 top-0 fixed bg-black z-[999] transition-opacity duration-500 ${
+                animationShowInfo ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <div className={`w-full h-screen grid grid-cols-[70%_30%] `}>
+                <div className="w-full h-screen bg-white relative flex justify-center items-center">
+                  <div className="w-full h-screen absolute p-3 md:p-10">
+                    <div className="w-full h-full flex flex-col justify-between items-center text-white text-[8px] md:text-xl xl:text-4xl relative 2xl:text-5xl">
+                      <div className=" rounded-full bg-black/20 p-1 flex justify-center items-center">
+                        <IoIosArrowUp
+                          className="cursor-pointer"
+                          onClick={handlePrevious}
+                        />
+                      </div>
+                      <div className=" rounded-full bg-black/20 p-1 flex justify-center items-center">
+                        <IoIosArrowDown
+                          className="cursor-pointer"
+                          onClick={handleNext}
+                        />
+                      </div>
                     </div>
                   </div>
+                  <Image
+                    unoptimized
+                    src={infoTarjeta[currentIndex].image}
+                    alt="alt"
+                    width={0}
+                    height={0}
+                    className={`w-full h-auto object-cover transition-opacity duration-300 ${fadeClass}`}
+                  />
                 </div>
-                <Image
-                  unoptimized
-                  src={infoTarjeta[currentIndex].image}
-                  alt="alt"
-                  width={0}
-                  height={0}
-                  className={`w-full h-auto object-cover transition-opacity duration-300 ${fadeClass}`}
-                />
-              </div>
-              <div className="bg-[#E8E8E8] w-full h-screen overflow-y-auto p-10 flex flex-col gap-10 !relative">
-                <IoIosCloseCircle
-                  className="cursor-pointer absolute right-3 top-2 text-2xl lg:text-4xl"
-                  onClick={() => setShowInfoTarjeta(false)}
-                />
-                <div className="w-full h-auto mb-10">
-                  <FaArrowLeftLong size={20} />
-                  <p className="text-xs">
-                    {language == "es"
-                      ? infoTarjeta[currentIndex].leyenda.es
-                      : infoTarjeta[currentIndex].leyenda.en}
-                  </p>
-                </div>
-                <div className="w-full h-auto">
-                  <p
-                    className={`${
-                      currentIndex == 0 ? "font-capital" : ""
-                    } text-xs md:text-sm xl:text-base 2xl:text-2xl`}
-                  >
-                    {language == "es"
-                      ? infoTarjeta[currentIndex].descripcion.es
-                      : infoTarjeta[currentIndex].descripcion.en}
-                  </p>
+                <div className="bg-[#E8E8E8] w-full h-screen overflow-y-auto p-10 flex flex-col gap-10 !relative">
+                  <IoIosCloseCircle
+                    className="cursor-pointer absolute right-3 top-2 text-2xl lg:text-4xl"
+                    onClick={onCloseShowInfoTarjeta}
+                  />
+                  <div className="w-full h-auto mb-10">
+                    <FaArrowLeftLong size={20} />
+                    <p className="text-xs xl:text-sm">
+                      {language == "es"
+                        ? infoTarjeta[currentIndex].leyenda.es
+                        : infoTarjeta[currentIndex].leyenda.en}
+                    </p>
+                  </div>
+                  <div className="w-full h-auto">
+                    <p
+                      className={`${
+                        currentIndex == 0 ? "font-capital" : ""
+                      } text-xs md:text-sm xl:text-base 2xl:text-2xl`}
+                    >
+                      {language == "es"
+                        ? infoTarjeta[currentIndex].descripcion.es
+                        : infoTarjeta[currentIndex].descripcion.en}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
