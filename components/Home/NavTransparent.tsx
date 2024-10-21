@@ -67,7 +67,7 @@ export default function NavTransparent() {
             <Link href="#">{translations[language].nosotros}</Link>
             <Link href="/historia">{translations[language].historia}</Link>
             <Link
-              href="https://sistemas.brisasdeltiticaca.com/admin"
+              href="https://sistemas.brisasdeltiticaca.com/intranet"
               target="_blank"
             >
               {translations[language].asociados}
@@ -243,7 +243,7 @@ export default function NavTransparent() {
               </Link>
               <Link
                 className="hover:text-[#23B3F0] "
-                href="https://sistemas.brisasdeltiticaca.com/admin"
+                href="https://sistemas.brisasdeltiticaca.com/intranet"
                 target="_blank"
               >
                 {translations[language].asociados}

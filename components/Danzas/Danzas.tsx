@@ -5,11 +5,17 @@ import NavTransparent from "../Home/NavTransparent";
 import InfiniteImageGrid from "@/components/GridInfinito/GridInfinito";
 import { useLanguage } from "@/context/LanguageProvider";
 import trs from "@/public/locales/translate.json";
+import VideoPlayer from "./Video";
+
+import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import { useState } from "react";
 
 export default function Danzas() {
   const { language } = useLanguage();
 
   const translations = trs as any;
+
+  const [isMute, setIsMute] = useState(true);
 
   return (
     <>
@@ -19,16 +25,7 @@ export default function Danzas() {
       <div className="h-[250px] sm:h-[350px] md:h-screen w-full absolute top-0 z-0">
         <div className="bg-black/70 w-full h-full absolute top-0"></div>
         {/* Imagen de fondo */}
-        <iframe
-          width="100%"
-          height="100%"
-          src="https://www.youtube.com/embed/6THw0hxK_Z8?autoplay=1&controls=0&playlist=6THw0hxK_Z8&mute=1&loop=1" // Agrega autoplay y mute
-          title="Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className=""
-        ></iframe>
+        <VideoPlayer onMute={isMute} />
         {/* <Image
           unoptimized
           src="/assets/images/danzas/fondo.png"
@@ -110,6 +107,17 @@ export default function Danzas() {
             >
               {translations[language].danza_descripcion}
             </span>
+            {isMute ? (
+              <FaVolumeMute
+                className="cursor-pointer text-sm sm:text-md lg:text-xl 2xl:text-3xl"
+                onClick={() => setIsMute(!isMute)}
+              />
+            ) : (
+              <FaVolumeUp
+                className="cursor-pointer text-sm sm:text-md lg:text-xl 2xl:text-3xl"
+                onClick={() => setIsMute(!isMute)}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -222,7 +230,7 @@ export default function Danzas() {
                   className="h-full w-auto"
                 />
                 <div className="h-full top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50 relative">
-                <div className="w-full absolute flex justify-center -top-10 md:top-0">
+                  <div className="w-full absolute flex justify-center -top-10 md:top-0">
                     <Image
                       unoptimized
                       src="/assets/images/danzas/planta2.png"
@@ -252,7 +260,7 @@ export default function Danzas() {
                 className="h-full w-auto"
               />
               <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50 relative">
-              <div className="w-full absolute flex justify-center -top-14 md:top-0">
+                <div className="w-full absolute flex justify-center -top-14 md:top-0">
                   <Image
                     unoptimized
                     src="/assets/images/danzas/planta3.png"
@@ -290,16 +298,16 @@ export default function Danzas() {
                   className="h-full w-auto"
                 />
                 <div className="h-full  top-0 left-0 w-full md:w-[40%] flex justify-end flex-col md:gap-3 z-50 relative">
-                <div className="w-full absolute flex justify-center -top-10 md:top-0">
-                  <Image
-                    unoptimized
-                    src="/assets/images/danzas/planta4.png"
-                    alt="alt"
-                    width={0}
-                    height={0}
-                    className="w-[100px] sm:w-[120px] md:w-[250px] xl:w-[300px] h-auto"
-                  />
-                </div>
+                  <div className="w-full absolute flex justify-center -top-10 md:top-0">
+                    <Image
+                      unoptimized
+                      src="/assets/images/danzas/planta4.png"
+                      alt="alt"
+                      width={0}
+                      height={0}
+                      className="w-[100px] sm:w-[120px] md:w-[250px] xl:w-[300px] h-auto"
+                    />
+                  </div>
                   <h1 className="bebas-neue text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl z-50 md:w-[70%]  leading-none">
                     {translations[language].danza_kullawa_titulo}
                   </h1>

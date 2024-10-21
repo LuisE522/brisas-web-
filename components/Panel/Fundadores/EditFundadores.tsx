@@ -33,10 +33,12 @@ export default function EditFundadores({ fundadores, onClose }: Props) {
   const [open, setOpen] = useState(true);
 
   const [nombre, setNombre] = useState<string>(fundadores.nombre);
-  const [descripcion, setDescripcion] = useState<any>(
-    fundadores.descripcion
-  );
+  const [descripcion, setDescripcion] = useState<any>({
+    es: fundadores.descripcion.es,
+    en: fundadores.descripcion.en,
+  });
   const [image, setImage] = useState<string>(fundadores.imagen);
+  const [fileImage, setFileImage] = useState<any>();
   const [fecha, setFecha] = useState<string>(fundadores.fecha);
 
   const token = getAuthTokenClient();
@@ -76,11 +78,48 @@ export default function EditFundadores({ fundadores, onClose }: Props) {
     console.log(data);
 
     toast.update(editUserToast, {
-      render: 'Actualizado.',
+      render: "Actualizado.",
       isLoading: false,
       type: "success",
       autoClose: 2000,
     });
+  };
+
+  const updateImage = async () => {
+    const formData = new FormData();
+    if (image) {
+      formData.append("image", fileImage);
+      formData.append("ruta", `/fundadores`);
+      formData.append("update", image);
+    } else {
+      toast.error("Debe seleccionar una imagen");
+      return null;
+    }
+
+    const uploadImageToast = toast.loading("Actualizando imagen...");
+
+    const response = await fetch("/api/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      setImage(result.fileUrl);
+      toast.update(uploadImageToast, {
+        render: "Imagen actualizada",
+        isLoading: false,
+        type: "success",
+        autoClose: 2000,
+      });
+    } else {
+      toast.update(uploadImageToast, {
+        render: "Error al actualizar la imagen",
+        isLoading: false,
+        type: "error",
+        autoClose: 2000,
+      });
+    }
   };
 
   const closeDialog = (open: boolean) => {
@@ -115,7 +154,7 @@ export default function EditFundadores({ fundadores, onClose }: Props) {
                   onChange={(e: any) => setFecha(e.target.value)}
                 />
               </div>
-              <div className="grid w-full items-center gap-1.5">
+              {/* <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="image">Imagen</Label>
                 <Input
                   type="text"
@@ -123,18 +162,45 @@ export default function EditFundadores({ fundadores, onClose }: Props) {
                   value={image}
                   onChange={(e: any) => setImage(e.target.value)}
                 />
+              </div> */}
+              <div className="grid w-full items-center gap-1.5">
+                <Label htmlFor="image">Imagen</Label>
+                <Input
+                  type="file"
+                  id="image"
+                  accept="image/*"
+                  onChange={(e) =>
+                    setFileImage(e.target.files ? e.target.files[0] : null)
+                  }
+                />
               </div>
               <div className="grid w-full items-center gap-1.5">
-                <Label htmlFor="descripcion">Descripcion</Label>
+                <Label htmlFor="descripcion-es">Descripcion (ES)</Label>
                 <Textarea
-                  rows={7}
-                  id="descripcion"
-                  value={descripcion}
-                  onChange={(e: any) => setDescripcion(e.target.value)}
+                  rows={4}
+                  id="descripcion-es"
+                  value={descripcion.es}
+                  onChange={(e: any) =>
+                    setDescripcion({ ...descripcion, es: e.target.value })
+                  }
+                />
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label htmlFor="descripcion-en">Descripcion (EN)</Label>
+                <Textarea
+                  rows={4}
+                  id="descripcion-en"
+                  value={descripcion.en}
+                  onChange={(e: any) =>
+                    setDescripcion({ ...descripcion, en: e.target.value })
+                  }
                 />
               </div>
 
-              <Button onClick={onSubmit}>Actualizar</Button>
+              <div className="w-full flex gap-3">
+                <Button onClick={onSubmit}>Actualizar</Button>
+                <Button onClick={updateImage}>Actualizar Imagen</Button>
+              </div>
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

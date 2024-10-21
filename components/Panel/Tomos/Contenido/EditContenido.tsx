@@ -42,17 +42,21 @@ export default function EditContenido({ onClose, tomoId, contenido }: Props) {
     es: contenido.leyenda.es,
     en: contenido.leyenda.en,
   });
-  const [image, setImage] = useState<string>(contenido.image);
+
+  const [image, setImage] = useState<any>();
+  const [urlImage, setUrlImage] = useState<string>(contenido.image);
+
+  console.log(contenido.image);
 
   const closeDialog = (open: boolean) => {
     console.log(open);
-    onClose(null)
+    onClose(null);
     setOpen(open);
   };
 
   const onSubmit = async () => {
     const dataJson = {
-      image,
+      image: urlImage,
       descripcion,
       leyenda,
       tomoId,
@@ -60,14 +64,17 @@ export default function EditContenido({ onClose, tomoId, contenido }: Props) {
 
     const createFundadoresToast = toast.loading("ACtualizando...");
 
-    const response = await fetch(`${API_URL}/tomos-contenido/update/${contenido.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(dataJson),
-    });
+    const response = await fetch(
+      `${API_URL}/tomos-contenido/update/${contenido.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(dataJson),
+      }
+    );
 
     const data = await response.json();
 
@@ -144,6 +151,43 @@ export default function EditContenido({ onClose, tomoId, contenido }: Props) {
     }
   };
 
+  const updateImage = async () => {
+    const formData = new FormData();
+    if (image) {
+      formData.append("image", image);
+      formData.append("ruta", `/tomos/${tomoId}/contenido`);
+      formData.append("update", urlImage);
+    } else {
+      toast.error("Debe seleccionar una imagen");
+      return null;
+    }
+
+    const uploadImageToast = toast.loading("Actualizando imagen...");
+
+    const response = await fetch("/api/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      setUrlImage(result.fileUrl);
+      toast.update(uploadImageToast, {
+        render: "Imagen actualizada",
+        isLoading: false,
+        type: "success",
+        autoClose: 2000,
+      });
+    } else {
+      toast.update(uploadImageToast, {
+        render: "Error al actualizar la imagen",
+        isLoading: false,
+        type: "error",
+        autoClose: 2000,
+      });
+    }
+  };
+
   return (
     <>
       <Dialog open={open} onOpenChange={(open) => closeDialog(open)}>
@@ -178,13 +222,25 @@ export default function EditContenido({ onClose, tomoId, contenido }: Props) {
                   />
                 </div>
               </div> */}
-              <div className="grid w-full items-center gap-1.5">
+              {/* <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="image">Imagen</Label>
                 <Input
                   type="text"
                   id="image"
                   value={image}
                   onChange={(e: any) => setImage(e.target.value)}
+                />
+              </div> */}
+
+              <div className="grid w-full items-center gap-1.5">
+                <Label htmlFor="image">Imagen</Label>
+                <Input
+                  type="file"
+                  id="image"
+                  accept="image/*"
+                  onChange={(e) =>
+                    setImage(e.target.files ? e.target.files[0] : null)
+                  }
                 />
               </div>
 
@@ -238,6 +294,7 @@ export default function EditContenido({ onClose, tomoId, contenido }: Props) {
 
               <div className="w-full flex flex-row gap-3 justify-end">
                 <Button onClick={onSubmit}>Actualizar</Button>
+                <Button onClick={updateImage}>Actualizar Imagen</Button>
                 <Button onClick={onTranslate}>Traducir</Button>
               </div>
             </DialogDescription>

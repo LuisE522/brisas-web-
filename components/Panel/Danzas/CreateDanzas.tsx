@@ -37,6 +37,7 @@ export default function CreateDanzas({ onClose }: Props) {
     en: "",
   });
   const [image, setImage] = useState<string>("");
+  const [fileImage, setFileImage] = useState<any>();
   const [slug, setSlug] = useState<string>("");
 
   const closeDialog = (open: boolean) => {
@@ -85,6 +86,46 @@ export default function CreateDanzas({ onClose }: Props) {
     closeDialog(false);
   };
 
+  const uploadFile = async () => {
+    const formData = new FormData();
+    if (fileImage) {
+      formData.append("image", fileImage);
+      formData.append("ruta", `/danzas`);
+    } else {
+      toast.error("Debe seleccionar una imagen");
+      return null;
+    }
+
+    const uploadImageToast = toast.loading("Subiendo imagen...");
+
+    const response = await fetch("/api/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      setImage(result.fileUrl);
+      toast.update(uploadImageToast, {
+        render: "Imagen subida",
+        isLoading: false,
+        type: "success",
+        autoClose: 2000,
+      });
+    } else {
+      console.log("Error");
+      console.log(result);
+      setImage("");
+
+      toast.update(uploadImageToast, {
+        render: "Error al subir la imagen",
+        isLoading: false,
+        type: "error",
+        autoClose: 2000,
+      });
+    }
+  };
+
   const handleNombreChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const nuevoNombre = e.target.value;
     setNombre({ ...nombre, es: nuevoNombre });
@@ -104,7 +145,7 @@ export default function CreateDanzas({ onClose }: Props) {
 
   const onTranslate = async () => {
     const dataJson = {
-      promp: `Traduceme los siguientes textos, el primero es el nombre de una danza y el 2do es su descripción\n1. ${nombre.es}\n2. ${descripcion.es}'n Solo devuelveme la traduccion en formato json nombre y descripcion.`
+      promp: `Traduceme los siguientes textos, el primero es el nombre de una danza y el 2do es su descripción\n1. ${nombre.es}\n2. ${descripcion.es}'n Solo devuelveme la traduccion en formato json nombre y descripcion.`,
     };
 
     const createTranslaeToast = toast.loading("Creando...");
@@ -121,8 +162,7 @@ export default function CreateDanzas({ onClose }: Props) {
     const data = await sendTranslation.json();
 
     if (sendTranslation.ok) {
-
-      const wqe = JSON.parse(data)
+      const wqe = JSON.parse(data);
 
       /* console.log(wqe.nombre) */
       setNombre({ ...nombre, en: wqe.nombre });
@@ -134,7 +174,6 @@ export default function CreateDanzas({ onClose }: Props) {
         type: "success",
         autoClose: 2000,
       });
-
     } else {
       toast.update(createTranslaeToast, {
         render: "Error al raducir",
@@ -188,13 +227,24 @@ export default function CreateDanzas({ onClose }: Props) {
                     onChange={(e) => setSlug(e.target.value)}
                   />
                 </div>
-                <div className="grid w-full items-center gap-1.5">
+                {/* <div className="grid w-full items-center gap-1.5">
                   <Label htmlFor="image">Imagen</Label>
                   <Input
                     type="text"
                     id="image"
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
+                  />
+                </div> */}
+                <div className="grid w-full items-center gap-1.5">
+                  <Label htmlFor="image">Imagen</Label>
+                  <Input
+                    type="file"
+                    id="image"
+                    accept="image/*"
+                    onChange={(e) =>
+                      setFileImage(e.target.files ? e.target.files[0] : null)
+                    }
                   />
                 </div>
               </div>
@@ -223,6 +273,7 @@ export default function CreateDanzas({ onClose }: Props) {
 
               <div className="w-full flex flex-row gap-3 justify-end">
                 <Button onClick={onSubmit}>Crear</Button>
+                <Button onClick={uploadFile}>Subir imagen</Button>
                 <Button onClick={onTranslate}>Traducir</Button>
               </div>
             </DialogDescription>

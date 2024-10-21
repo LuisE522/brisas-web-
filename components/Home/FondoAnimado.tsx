@@ -22,66 +22,72 @@ export default function FondoAnimado() {
         id="images-container"
       >
         {/* Imágenes de fondo */}
-        <Image
-          src="/assets/images/fondo_animado/1.png"
-          unoptimized
-          alt="Fondo 1"
-          width={0}
-          height={0}
-          className={`w-full h-full object-cover ${
-            load === false
-              ? "transition-transform duration-1000 scale-[250%]"
-              : "transition-transform duration-1000 scale-[130%]"
-          } absolute -top-10 md:-top-36`}
-        />
-        <Image
-          src="/assets/images/fondo_animado/2.png"
-          unoptimized
-          alt="Fondo 2"
-          width={0}
-          height={0}
-          className={`w-full object-cover ${
-            load === false
-              ? "transition-transform duration-1000 scale-[250%]"
-              : "transition-transform duration-1000 scale-[130%]"
-          } absolute -bottom-0 left-0`}
-        />
-        <Image
-          src="/assets/images/fondo_animado/3.png"
-          unoptimized
-          alt="Fondo 3"
-          width={0}
-          height={0}
-          className={`w-full object-cover ${
-            load === false
-              ? "transition-transform duration-1000 scale-[250%]"
-              : "transition-transform duration-1000 scale-[130%]"
-          } absolute -bottom-0 left-0`}
-        />
-        <Image
-          src="/assets/images/fondo_animado/4.png"
-          unoptimized
-          alt="Fondo 4"
-          width={0}
-          height={0}
-          className={`w-full object-cover ${
-            load === false
-              ? "transition-transform duration-1000 scale-[250%]"
-              : "transition-transform duration-1000 scale-[130%]"
-          } absolute -bottom-0 left-0`}
-        />
-        <Image
-          src="/assets/images/fondo_animado/5.png"
-          unoptimized
-          alt="Fondo 5"
-          width={0}
-          height={0}
-          className={`w-full object-cover ${
-            load === false
-              ? "transition-transform duration-1000 scale-[250%]"
-              : "transition-transform duration-1000 scale-[130%]"
-          } absolute -bottom-0 left-0`}
-        />
+        <div className="hidden lg:block">
+          <Image
+            src="/assets/images/fondo_animado/1.png"
+            unoptimized
+            alt="Fondo 1"
+            width={0}
+            height={0}
+            className={`w-full h-full object-cover ${
+              load === false
+                ? "transition-transform duration-1000 scale-[250%]"
+                : "transition-transform duration-1000 scale-[130%]"
+            } absolute -top-10 md:-top-36`}
+          />
+          <Image
+            src="/assets/images/fondo_animado/2.png"
+            unoptimized
+            alt="Fondo 2"
+            width={0}
+            height={0}
+            className={`w-full object-cover ${
+              load === false
+                ? "transition-transform duration-1000 scale-[250%]"
+                : "transition-transform duration-1000 scale-[130%]"
+            } absolute -bottom-0 left-0`}
+          />
+          <Image
+            src="/assets/images/fondo_animado/3.png"
+            unoptimized
+            alt="Fondo 3"
+            width={0}
+            height={0}
+            className={`w-full object-cover ${
+              load === false
+                ? "transition-transform duration-1000 scale-[250%]"
+                : "transition-transform duration-1000 scale-[130%]"
+            } absolute -bottom-0 left-0`}
+          />
+          <Image
+            src="/assets/images/fondo_animado/4.png"
+            unoptimized
+            alt="Fondo 4"
+            width={0}
+            height={0}
+            className={`w-full object-cover ${
+              load === false
+                ? "transition-transform duration-1000 scale-[250%]"
+                : "transition-transform duration-1000 scale-[130%]"
+            } absolute -bottom-0 left-0`}
+          />
+          <Image
+            src="/assets/images/fondo_animado/5.png"
+            unoptimized
+            alt="Fondo 5"
+            width={0}
+            height={0}
+            className={`w-full object-cover ${
+              load === false
+                ? "transition-transform duration-1000 scale-[250%]"
+                : "transition-transform duration-1000 scale-[130%]"
+            } absolute -bottom-0 left-0`}
+          />
+        </div>
+
+        <div className="block lg:hidden">
+          <Image unoptimized src="/assets/images/fondo_home_2.png" alt="alt" width={0} height={0} className="w-full h-screen object-cover" />
+        </div>
 
         {/* Fondo transparente */}
         <div className="bg-black/60 h-full w-full absolute top-0 left-0 z-0"></div>

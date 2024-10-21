@@ -86,7 +86,6 @@ export default function Puquina() {
 
   return (
     <>
-      
       <div className="h-screen w-full absolute top-0 z-0">
         <div className="bg-black/60 w-full h-full absolute top-0"></div>
         {/* Imagen de fondo */}
@@ -99,9 +98,29 @@ export default function Puquina() {
           className="w-full h-full object-cover"
         />
         {/* Imagen de fondo */}
+
+        {/* Logo en la esquina derecha */}
+        <Image
+          unoptimized
+          src="/assets/images/pquina/logo.png"
+          alt="alt"
+          width={0}
+          height={0}
+          className="w-auto h-[70px] object-cover absolute top-[124px] right-10"
+        />
+        {/* Logo en la esquina derecha */}
+
+        <p className="bottom-12 w-full absolute text-white text-center">
+          Atención de 12:00 a.m. 4:00 p.m.
+        </p>
+        <div className="w-full flex justify-center absolute -bottom-5">
+          <button className="w-fit px-4 py-2 text-center bg-white font-bold rounded-full drop-shadow-lg">
+            Consulta
+          </button>
+        </div>
       </div>
       <div className="w-full h-screen bg-black">
-        <div className="mx-auto w-[500px] h-full !relative">
+        <div className="mx-auto w-[500px]  h-full !relative">
           <div className="h-full w-full flex flex-col gap-1 items-center justify-center text-white text-center">
             <span>SALÓN GASTRONOMICO</span>
             <h1
@@ -119,11 +138,32 @@ export default function Puquina() {
         </div>
       </div>
       <div className="w-full relative flex flex-col gap-20 py-20">
-        <div className="max-w-[95%] mx-auto w-[900px] flex flex-col gap-8">
+        <div className="max-w-[95%] mx-auto w-[900px] 2xl:w-full 2xl:max-w-screen-lg flex flex-col gap-8">
           <p className="text-4xl bebas-neue text-center">
             Deléitese con lo mejor de la culinaria puneña y peruana a través de
             deliciosos potahes preparados con recetas e insumos originales
           </p>
+        </div>
+
+        <div className="w-full h-screen bg-slate-300 animate-pulse"></div>
+
+        <div className="mx-auto max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-lg flex flex-col gap-8">
+          <div className="w-full flex flex-col gap-3">
+            <p className="text-4xl bebas-neue text-center">
+              Descubre nuestro menú
+            </p>
+            <div className="w-full text-center">
+              <span>
+                El menú consiste en una mezcla de comidas tipica de Puno y
+                cambia según la estación.
+              </span>
+              <br />
+              <span>
+                ¡No te olvides de preguntar por los platos especiales del día!
+              </span>
+            </div>
+          </div>
+
           <div className="w-full h-[50px] flex flex-row flex-wrap items-center justify-between gap-1 uppercase">
             <div
               onClick={() => changeCategoria("Entradas")}
@@ -165,9 +205,23 @@ export default function Puquina() {
             >
               Menu infantil
             </div>
+            <div
+              onClick={() => changeCategoria("Tragos")}
+              className={`cursor-pointer transition-all duration-500 ${
+                categoria === "Tragos" ? "text-lg font-bold" : "text-sm"
+              }`}
+            >
+              Tragos
+            </div>
+            <div
+              onClick={() => changeCategoria("Postres")}
+              className={`cursor-pointer transition-all duration-500 ${
+                categoria === "Postres" ? "text-lg font-bold" : "text-sm"
+              }`}
+            >
+              Postres
+            </div>
           </div>
-        </div>
-        <div className="mx-auto max-w-[95%] w-[900px] flex flex-col gap-8">
           <p className="text-6xl text-center bebas-neue" id="entradas">
             {categoria}
           </p>

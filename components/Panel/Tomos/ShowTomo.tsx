@@ -21,7 +21,8 @@ export default function ShowTomo({ tomo }: { tomo: TomosWithContenido_I }) {
   /* console.log(tomo); */
 
   const [titulo, setTitulo] = useState(tomo.titulo);
-  const [image, setImage] = useState<string>(tomo.image);
+  const [image, setImage] = useState<any>();
+  const [urlImage, setUrlImage] = useState<string>(tomo.image);
   const [dialogInfoContenido, setDialogInfoContenido] =
     useState<Contenido_I | null>(null);
   const [showDialogInfoContenido, setShowDialogInfoContenido] = useState(false);
@@ -33,11 +34,11 @@ export default function ShowTomo({ tomo }: { tomo: TomosWithContenido_I }) {
   const token = getAuthTokenClient();
 
   const onUpdate = async () => {
-    const updateTomoToast = toast.loading("Creando...");
+    const updateTomoToast = toast.loading("Actualizando...");
 
     const data = {
       titulo,
-      image,
+      image: urlImage,
     };
 
     const update = await fetch(`${API_URL}/tomos/update/${tomo.id}`, {
@@ -70,6 +71,43 @@ export default function ShowTomo({ tomo }: { tomo: TomosWithContenido_I }) {
     /* console.log(res); */
   };
 
+  const updateImage = async () => {
+    if (!image) {
+      toast.error("Debe seleccionar una imagen");
+      return null;
+    }
+
+    const uploadImageToast = toast.loading("Actualizando imagen...");
+
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("ruta", `/tomos/${tomo.id}`);
+    formData.append("update", urlImage);
+
+    const response = await fetch("/api/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      setUrlImage(result.fileUrl);
+      toast.update(uploadImageToast, {
+        render: "Imagen actualizada",
+        isLoading: false,
+        type: "success",
+        autoClose: 2000,
+      });
+    } else {
+      toast.update(uploadImageToast, {
+        render: "Error al actualizar la imagen",
+        isLoading: false,
+        type: "error",
+        autoClose: 2000,
+      });
+    }
+  };
+
   const showDialogContenido = (index: number) => {
     setDialogInfoContenido(listContenido[index]);
     setShowDialogInfoContenido(true);
@@ -94,7 +132,7 @@ export default function ShowTomo({ tomo }: { tomo: TomosWithContenido_I }) {
         <div className="w-full grid grid-cols-1 lg:grid-cols-[30%_68%] justify-between">
           <div className="w-full h-auto flex flex-col gap-2">
             <Image
-              src={image}
+              src={urlImage}
               alt="alt"
               width={300}
               height={250}
@@ -121,7 +159,7 @@ export default function ShowTomo({ tomo }: { tomo: TomosWithContenido_I }) {
               />
             </div>
 
-            <div className="grid w-full items-center gap-1.5">
+            {/* <div className="grid w-full items-center gap-1.5">
               <Label htmlFor="imagen">Imagen</Label>
               <Input
                 type="text"
@@ -129,6 +167,27 @@ export default function ShowTomo({ tomo }: { tomo: TomosWithContenido_I }) {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               />
+            </div> */}
+
+            <div className="w-full grid grid-cols-2 gap-3">
+              <div className="grid w-full items-center gap-1.5">
+                <Label htmlFor="image">Imagen</Label>
+                <Input
+                  type="file"
+                  id="image"
+                  accept="image/*"
+                  onChange={(e) =>
+                    setImage(e.target.files ? e.target.files[0] : null)
+                  }
+                />
+              </div>
+
+              <div className="w-full grid items-ceter gap-1.5">
+                <Label></Label>
+                <Button className="w-full h-full" onClick={updateImage}>
+                  Actualizar
+                </Button>
+              </div>
             </div>
 
             <Button onClick={onUpdate}>Actualizar</Button>
