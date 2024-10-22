@@ -17,6 +17,8 @@ export default function Page3({ i_images, d_images }: Props) {
   const [load, setLoad] = useState(false);
   const [loadAnimation, setLoadAnimaion] = useState(false);
 
+  const [changeText, setChangeText] = useState("");
+
   const { language } = useLanguage();
 
   const translations = trs as any;
@@ -51,7 +53,7 @@ export default function Page3({ i_images, d_images }: Props) {
               className="tracking-tight uppercase font-extrabold text-3xl sm:text-4xl mx-auto w-[80%] text-center bg-gradient-to-t from-[#FC228A] to-[#FF9900] bg-clip-text text-transparent"
               style={{ lineHeight: "1.2" }}
             >
-              62 años de historia
+              62 años de nuestra historia
             </h1>
 
             <div className="grid grid-cols-2 gap-5 w-full relative">
@@ -68,11 +70,13 @@ export default function Page3({ i_images, d_images }: Props) {
                 </div>
                 <Link
                   href={"/evento/almuerzo-show"}
+                  onMouseEnter={() => setChangeText("almuerzo-show")}
+                  onMouseLeave={() => setChangeText("")}
                   className={`${
                     loadAnimation ? "z-[99999999]" : ""
-                  } w-fit inline-flex items-center justify-center px-4 lg:px-8 py-1 lg:py-2 font-sans font-semibold tracking-wide text-white bg-transparent border-2 border-[#FF9900] hover:bg-[#FF9900] transition-all duration-300 rounded-full`}
+                  } w-fit text-center inline-flex items-center justify-center px-4 lg:px-8 py-1 lg:py-2 font-sans font-semibold tracking-wide text-white bg-transparent border-2 border-[#FF9900] hover:bg-[#FF9900] transition-all duration-300 rounded-full`}
                 >
-                  {translations[language].reservar}
+                  {changeText == "almuerzo-show" ? 'Compra tus entradas aqui' : translations[language].reservar}
                 </Link>
               </div>
 
@@ -89,11 +93,13 @@ export default function Page3({ i_images, d_images }: Props) {
                 </div>
                 <Link
                   href={"/evento/noche-de-folklore"}
+                  onMouseEnter={() => setChangeText("noche-folklore")}
+                  onMouseLeave={() => setChangeText("")}
                   className={`${
                     loadAnimation ? "z-[99999999]" : ""
-                  } w-fit inline-flex items-center justify-center px-4 lg:px-8 py-1 lg:py-2 font-sans font-semibold tracking-wide text-white bg-transparent border-2 border-[#FC228A] hover:bg-[#FC228A] transition-all duration-300 rounded-full`}
+                  } w-fit text-center inline-flex items-center justify-center px-4 lg:px-8 py-1 lg:py-2 font-sans font-semibold tracking-wide text-white bg-transparent border-2 border-[#FC228A] hover:bg-[#FC228A] transition-all duration-300 rounded-full`}
                 >
-                  {translations[language].reservar}
+                  {changeText == "noche-folklore" ? 'Compra tus entradas aqui' : translations[language].reservar}
                 </Link>
               </div>
             </div>
@@ -127,17 +133,19 @@ export default function Page3({ i_images, d_images }: Props) {
                   className="h-[80%] w-auto object-cover"
                 /> */}
               </div>
+
+              {/* Version pc */}
               <div className="hidden md:flex flex-col gap-5 justify-center items-center">
                 <h1
-                  className="tracking-tight uppercase font-extrabold text-4xl lg:text-6xl 2xl:text-7xl mx-auto w-full 2xl:w-[90%] text-center bg-gradient-to-t from-[#FC228A] to-[#FF9900] bg-clip-text text-transparent"
+                  className="tracking-tight uppercase font-extrabold text-4xl lg:text-6xl mx-auto w-full lg:w-[95%]  text-center bg-gradient-to-t from-[#FC228A] to-[#FF9900] bg-clip-text text-transparent"
                   style={{ lineHeight: "1.2" }}
                 >
-                  62 años de historia
+                  62 años de nuestra historia
                 </h1>
 
                 <div className="grid grid-cols-2 gap-5 w-full relative">
                   <div className="w-full h-full flex flex-col gap-3 justify-center items-center">
-                    <div className="w-full h-[50px] md:h-[60px] lg:h-[80px] flex justify-center">
+                    <div className="w-full h-[50px] md:h-[60px] lg:h-[80px] 2xl:h-[100px] flex justify-center">
                       <Image
                         src={"/assets/images/logo_almuerzo_show.png"}
                         unoptimized
@@ -149,16 +157,18 @@ export default function Page3({ i_images, d_images }: Props) {
                     </div>
                     <Link
                       href={"/evento/almuerzo-show"}
+                      onMouseEnter={() => setChangeText("almuerzo-show")}
+                      onMouseLeave={() => setChangeText("")}
                       className={`${
                         loadAnimation ? "z-[99999999]" : ""
-                      } w-fit inline-flex items-center justify-center px-4 lg:px-8 py-1 lg:py-2 font-sans font-semibold tracking-wide text-white bg-transparent border-2 border-[#FF9900] hover:bg-[#FF9900] transition-all duration-300 rounded-full`}
+                      } max-w-[200px] text-center w-auto inline-flex items-center justify-center px-4 lg:px-8 py-1 lg:py-2 font-sans font-semibold tracking-wide text-white bg-transparent border-2 border-[#FF9900] hover:bg-[#FF9900] transition-all duration-300 rounded-full`}
                     >
-                      {translations[language].reservar}
+                      {changeText == "almuerzo-show" ? 'Compra tus entradas aqui' : translations[language].reservar}
                     </Link>
                   </div>
 
                   <div className="w-full h-auto flex flex-col gap-3 justify-center items-center">
-                    <div className="w-full h-[50px] md:h-[60px] lg:h-[80px] flex justify-center">
+                    <div className="w-full h-[50px] md:h-[60px] lg:h-[80px] 2xl:h-[100px] flex justify-center">
                       <Image
                         src={"/assets/images/logo_noches_de_folklore.png"}
                         unoptimized
@@ -170,11 +180,13 @@ export default function Page3({ i_images, d_images }: Props) {
                     </div>
                     <Link
                       href={"/evento/noche-de-folklore"}
+                      onMouseEnter={() => setChangeText("noche-folklore")}
+                      onMouseLeave={() => setChangeText("")}
                       className={`${
                         loadAnimation ? "z-[99999999]" : ""
-                      } w-fit inline-flex items-center justify-center px-4 lg:px-8 py-1 lg:py-2 font-sans font-semibold tracking-wide text-white bg-transparent border-2 border-[#FC228A] hover:bg-[#FC228A] transition-all duration-300 rounded-full`}
+                      } max-w-[200px] text-center w-auto inline-flex items-center justify-center px-4 lg:px-8 py-1 lg:py-2 font-sans font-semibold tracking-wide text-white bg-transparent border-2 border-[#FC228A] hover:bg-[#FC228A] transition-all duration-300 rounded-full`}
                     >
-                      {translations[language].reservar}
+                      {changeText == "noche-folklore" ? 'Compra tus entradas aqui' : translations[language].reservar}
                     </Link>
                   </div>
                 </div>
@@ -195,6 +207,7 @@ export default function Page3({ i_images, d_images }: Props) {
                   </div>
                 </div>
               </div>
+              {/* Version pc */}
               <div className="flex justify-end items-end h-full">
                 <CaroucelPeronsajes images={d_images} />
                 {/* <Image

@@ -97,7 +97,7 @@ export default function FondoAnimado() {
         </div>
 
         {/* Fondo transparente */}
-        <div className="bg-black/60 h-full w-full absolute top-0 left-0 z-0"></div>
+        <div className="bg-black/80 h-full w-full absolute top-0 left-0 z-0"></div>
         {/* Fondo transparente */}
 
         <div className="min-h-screen h-full lg:h-screen w-full bg-center bg-cover absolute top-0 left-0 hidden md:flex">

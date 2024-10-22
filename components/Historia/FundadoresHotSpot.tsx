@@ -98,21 +98,21 @@ export default function FundadoresHotSpot({
 
       {showInfoFundador && (
         <div className="absolute top-0 w-full h-full flex items-center justify-center z-50">
-          <div className="max-w-[95%] w-[900px] max-h-[95%] h-[500px] bg-black rounded-3xl !relative flex items-center justify-center">
-            <div className="w-[90%] h-[80%] grid grid-cols-2 box-border text-white gap-5">
+          <div className="w-full h-full absolute top-0 bg-black/80"></div>
+          <div className="max-w-[95%] w-[900px] xl:w-[1280px] max-h-[95%] h-[500px] xl:h-[800px] bg-black rounded-3xl !relative flex items-center justify-center">
+            <div className="w-[90%] h-[80%] grid grid-cols-2 justify-center items-center box-border text-white gap-5">
               <div className="w-full h-full flex flex-col gap-5 justify-between">
                 <div className="absolute top-2 left-2">
                   <IoIosCloseCircle
-                    size={30}
                     onClick={() => setShowInfoFundador(false)}
-                    className="cursor-pointer"
+                    className="cursor-pointer text-2xl xl:text-5xl"
                   />
                 </div>
                 <div className="w-full flex flex-col gap-5">
-                  <h1 className="text-3xl font-bold">
+                  <h1 className="text-3xl 2xl:text-5xl font-bold">
                     {selectFundador?.nombre}
                   </h1>
-                  <p>
+                  <p className="text-base 2xl:text-xl">
                     {language == "es" ? (
                       <>{selectFundador?.descripcion.es}</>
                     ) : (
@@ -121,7 +121,7 @@ export default function FundadoresHotSpot({
                   </p>
                 </div>
                 <div className="w-full flex flex-row gap-3 items-center">
-                  <AiFillSound size={30} />
+                  {/* <AiFillSound size={30} /> */}
                   {/* <div className="w-1/2 h-1 relative">
                     <div className="w-1/3 h-full bg-gray-600 absolute top-0 left-0"></div>
                     <div className="w-full h-full bg-white"></div>
@@ -135,7 +135,7 @@ export default function FundadoresHotSpot({
                   alt="alt"
                   width={0}
                   height={0}
-                  className="w-full h-full object-cover"
+                  className="w-full xl:w-[500px] h-full xl:h-[500px] object-cover rounded-lg"
                 />
               </div>
             </div>

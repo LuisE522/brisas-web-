@@ -156,7 +156,13 @@ export default function CaroucelTarjetas() {
                 animationShowInfo ? "opacity-100" : "opacity-0"
               }`}
             >
-              <div className={`w-full h-screen grid grid-cols-[70%_30%] `}>
+              <div
+                className={`w-full h-screen grid grid-cols-1 lg:grid-cols-[70%_30%]  overflow-auto lg:overflow-hidden`}
+              >
+                <IoIosCloseCircle
+                  className="cursor-pointer absolute right-5 top-2 text-2xl lg:text-4xl z-50 lg:hidden"
+                  onClick={onCloseShowInfoTarjeta}
+                />
                 <div className="w-full h-screen bg-white relative flex justify-center items-center">
                   <div className="w-full h-screen absolute p-3 md:p-10">
                     <div className="w-full h-full flex flex-col justify-between items-center text-white text-[8px] md:text-xl xl:text-4xl relative 2xl:text-5xl">
@@ -183,12 +189,12 @@ export default function CaroucelTarjetas() {
                     className={`w-full h-auto object-cover transition-opacity duration-300 ${fadeClass}`}
                   />
                 </div>
-                <div className="bg-[#E8E8E8] w-full h-screen overflow-y-auto p-10 flex flex-col gap-10 !relative">
+                <div className="bg-[#E8E8E8] w-full h-fit lg:h-screen overflow-y-auto p-10 flex flex-col gap-10 !relative">
                   <IoIosCloseCircle
-                    className="cursor-pointer absolute right-3 top-2 text-2xl lg:text-4xl"
+                    className="cursor-pointer hidden lg:block absolute right-3 top-2 text-2xl lg:text-4xl"
                     onClick={onCloseShowInfoTarjeta}
                   />
-                  <div className="w-full h-auto mb-10">
+                  <div className="w-full h-auto mb-5 lg:mb-10">
                     <FaArrowLeftLong size={20} />
                     <p className="text-xs xl:text-sm">
                       {language == "es"
