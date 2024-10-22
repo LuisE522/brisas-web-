@@ -86,7 +86,14 @@ export default function FondoAnimado() {
         </div>
 
         <div className="block lg:hidden">
-          <Image unoptimized src="/assets/images/fondo_home_2.png" alt="alt" width={0} height={0} className="w-full h-screen object-cover" />
+          <Image
+            unoptimized
+            src="/assets/images/fondo_home_2.png"
+            alt="alt"
+            width={0}
+            height={0}
+            className="w-full h-screen object-cover"
+          />
         </div>
 
         {/* Fondo transparente */}
@@ -130,7 +137,7 @@ export default function FondoAnimado() {
           </div>
         </div>
 
-        <div className="w-full h-full top-0 left-0 absolute grid grid-cols-2 md:block">
+        <div className="w-full h-full top-0 left-0 absolute hidden md:block">
           <Image
             unoptimized
             src={"/assets/images/d_planta.png"}
@@ -149,6 +156,37 @@ export default function FondoAnimado() {
             height={0}
             className={`${
               loadAnimation == false ? "divOnLoad" : "divOnLoad"
+            } scale-x-[-1] h-auto w-auto absolute bottom-0 left-0`}
+          />
+          {/* <Image
+            unoptimized
+            src={"/assets/images/a_planta.png"}
+            alt=""
+            width={0}
+            height={0}
+            className=" w-[20%] h-auto absolute top-0 right-0"
+          /> */}
+        </div>
+
+        <div className="w-full h-full top-0 left-0 absolute grid grid-cols-2 md:hidden">
+          <Image
+            unoptimized
+            src={"/assets/images/d_planta.png"}
+            alt=""
+            width={0}
+            height={0}
+            className={`${
+              loadAnimation == false ? "divOnLoadMobile" : "divOnLoadMobile"
+            } h-auto w-auto absolute bottom-0 right-0`}
+          />
+          <Image
+            unoptimized
+            src={"/assets/images/d_planta.png"}
+            alt=""
+            width={0}
+            height={0}
+            className={`${
+              loadAnimation == false ? "divOnLoadMobile" : "divOnLoadMobile"
             } scale-x-[-1] h-auto w-auto absolute bottom-0 left-0`}
           />
           {/* <Image

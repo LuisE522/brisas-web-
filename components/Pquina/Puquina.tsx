@@ -119,6 +119,7 @@ export default function Puquina() {
           </button>
         </div>
       </div>
+
       <div className="w-full h-screen bg-black">
         <div className="mx-auto w-[500px]  h-full !relative">
           <div className="h-full w-full flex flex-col gap-1 items-center justify-center text-white text-center">
@@ -137,6 +138,18 @@ export default function Puquina() {
           </div>
         </div>
       </div>
+
+      <div className="w-full h-auto">
+        <Image
+          unoptimized
+          src="/assets/images/pquina/fondo_2.png"
+          alt="alt"
+          width={0}
+          height={0}
+          className="w-full h-auto"
+        />
+      </div>
+
       <div className="w-full relative flex flex-col gap-20 py-20">
         <div className="max-w-[95%] mx-auto w-[900px] 2xl:w-full 2xl:max-w-screen-lg flex flex-col gap-8">
           <p className="text-4xl bebas-neue text-center">

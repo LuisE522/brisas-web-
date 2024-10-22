@@ -48,7 +48,7 @@ export default function Page3({ i_images, d_images }: Props) {
 
           <div className="flex flex-col gap-5 md:hidden w-full h-fit top-[80px] absolute">
             <h1
-              className="tracking-tight uppercase font-extrabold text-3xl mx-auto w-[90%] text-center bg-gradient-to-t from-[#FC228A] to-[#FF9900] bg-clip-text text-transparent"
+              className="tracking-tight uppercase font-extrabold text-3xl sm:text-4xl mx-auto w-[80%] text-center bg-gradient-to-t from-[#FC228A] to-[#FF9900] bg-clip-text text-transparent"
               style={{ lineHeight: "1.2" }}
             >
               62 años de historia
@@ -56,7 +56,7 @@ export default function Page3({ i_images, d_images }: Props) {
 
             <div className="grid grid-cols-2 gap-5 w-full relative">
               <div className="w-full h-full flex flex-col gap-3 justify-center items-center">
-                <div className="w-full h-[50px] md:h-[60px] lg:h-[80px] flex justify-center">
+                <div className="w-full h-[50px] sm:h-[70px] flex justify-center">
                   <Image
                     src={"/assets/images/logo_almuerzo_show.png"}
                     unoptimized
@@ -77,7 +77,7 @@ export default function Page3({ i_images, d_images }: Props) {
               </div>
 
               <div className="w-full h-auto flex flex-col gap-3 justify-center items-center">
-                <div className="w-full h-[50px] md:h-[60px] lg:h-[80px] flex justify-center">
+                <div className="w-full h-[50px] sm:h-[70px] flex justify-center">
                   <Image
                     src={"/assets/images/logo_noches_de_folklore.png"}
                     unoptimized
@@ -129,7 +129,7 @@ export default function Page3({ i_images, d_images }: Props) {
               </div>
               <div className="hidden md:flex flex-col gap-5 justify-center items-center">
                 <h1
-                  className="tracking-tight uppercase font-extrabold text-4xl lg:text-5xl text-center bg-gradient-to-t from-[#FC228A] to-[#FF9900] bg-clip-text text-transparent"
+                  className="tracking-tight uppercase font-extrabold text-4xl lg:text-6xl 2xl:text-7xl mx-auto w-full 2xl:w-[90%] text-center bg-gradient-to-t from-[#FC228A] to-[#FF9900] bg-clip-text text-transparent"
                   style={{ lineHeight: "1.2" }}
                 >
                   62 años de historia

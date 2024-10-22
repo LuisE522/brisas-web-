@@ -111,12 +111,33 @@ html {
   }
 
   40% {
-    width: 40%;
+    width: 35%;
   }
 
   100% {
-    width: 40%;
+    width: 35%;
   }
+}
+
+@keyframes fadeOnLoadMobile {
+  0% {
+    width: 100%;
+  }
+
+  40% {
+    width: 50%;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+.divOnLoadMobile {
+  animation: fadeOnLoadMobile 4s linear forwards;
+  /* animation-timeline: auto, scroll();
+  animation-range: 0% 50%; */
+  z-index: 20;
 }
 
 .divOnLoad {
