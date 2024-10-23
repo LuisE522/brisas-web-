@@ -314,3 +314,26 @@ html {
  .grid-infinito > div:nth-child(odd) {
   top: 150px;
 }
+
+@keyframes MovePlato {
+  0% {
+    transform: translate(50%, -50%); /* Comienza fuera de la pantalla */
+    opacity: 0; /* Comienza invisible */
+  }
+
+  40% {
+    transform: translate(0, 0); /* Se mueve a la posición final */
+    opacity: 1; /* Se hace visible */
+  }
+
+  100% {
+    transform: translate(0, 0); /* Mantiene la posición final */
+  }
+}
+
+.PlatoMove {
+  animation: MovePlato 0.5s linear forwards; /* 0.5s para la duración */
+  position: absolute; /* Asegúrate de que está en posición absoluta */
+  top: -50%; /* Posición inicial */
+  right: -50%; /* Posición inicial */
+}

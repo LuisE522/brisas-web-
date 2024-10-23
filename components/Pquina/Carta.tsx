@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function Carta() {
@@ -80,7 +81,7 @@ export default function Carta() {
     setCategoria(option);
   };
   return (
-    <div className="max-w-[95%] w-[500px] md:w-[800px] lg:w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto relative flex flex-col gap-20 py-20">
+    <div className="max-w-[95%] w-[500px] md:w-[800px] lg:w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto relative flex flex-col gap-10 md:gap-20 py-10 md:py-20">
       <div className="w-full flex flex-col gap-8">
         <div className="w-full h-[50px] flex flex-row flex-wrap items-center justify-between gap-1 uppercase">
           <div
@@ -160,24 +161,38 @@ export default function Carta() {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="p-3 w-full h-40 flex flex-col gap-1">
+              <div className="p-3 w-full h-32 md:h-40 flex flex-col gap-1">
                 <h1 className="font-bold">{entrada.nombre}</h1>
-                <p className="text-xs">{entrada.descripcion}</p>
+                <p className="text-[10px] md:text-xs line-clamp-4">
+                  {entrada.descripcion}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-5 text-center">
-        <div className="border-2 border-[#949393] w-[250px] px-2 py-1 text-[#949393]">
+      <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-5 text-center text-sm md:text-base">
+        <Link
+          href="https://bit.ly/CartaPuquina"
+          target="_blank"
+          className="border-2 border-[#949393] w-[250px] px-2 py-1 text-[#949393]"
+        >
           Carta Digital Puquina Q'ocha
-        </div>
-        <div className="border-2 border-[#949393] w-[250px] px-2 py-1 text-[#949393]">
+        </Link>
+        <Link
+          href="https://drive.google.com/file/d/1eDl5szVReJaHh0TXnJhRQwjASrb9EGWw/view?usp=drive_link"
+          target="_blank"
+          className="border-2 border-[#949393] w-[250px] px-2 py-1 text-[#949393]"
+        >
           Carta Fiesta Patronal
-        </div>
-        <div className="border-2 border-[#949393] w-[250px] px-2 py-1 text-[#949393]">
+        </Link>
+        <Link
+          href="https://drive.google.com/file/d/155FCBm7fASrwjYI8WUQ9CvDoOAvKuZ8z/view?usp=drive_link"
+          target="_blank"
+          className="border-2 border-[#949393] w-[250px] px-2 py-1 text-[#949393]"
+        >
           Carta Cócteles
-        </div>
+        </Link>
       </div>
     </div>
   );

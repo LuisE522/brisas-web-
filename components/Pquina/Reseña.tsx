@@ -44,7 +44,7 @@ export default function Reseña() {
 
   return (
     <>
-      <div className="w-full h-[100px] sm:h-[150px] md:h-[200px]">
+      <div className="w-full h-[100px] sm:h-[130px] lg:h-[150px] 2xl:h-[200px]">
         <Swiper
           slidesPerView={1}
           spaceBetween={0}
@@ -73,10 +73,10 @@ export default function Reseña() {
                   </span>
                 </div>
                 <div className="h-full flex flex-col items-start justify-center">
-                  <h1 className="text-base sm:text-xl md:text-3xl font-bold text-white">
+                  <h1 className="text-base sm:text-xl 2xl:text-3xl font-bold text-white">
                     {reseña.nombre}
                   </h1>
-                  <p className="text-white text-xs sm:text-sm md:text-base">
+                  <p className="text-white text-xs sm:text-sm 2xl:text-base">
                     {reseña.comentario}
                   </p>
                 </div>
