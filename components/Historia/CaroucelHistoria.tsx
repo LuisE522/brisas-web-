@@ -53,7 +53,7 @@ export default function CaroucelHistoria() {
   return (
     <div className="w-full relative">
       <div className="w-auto h-full absolute top-0 left-0 z-40">
-        <div className="bg-gradient-to-r from-black to-transparent w-[50px] h-full"></div>
+        {/* <div className="bg-gradient-to-r from-black to-transparent w-[50px] h-full"></div> */}
       </div>
       {fundadores != null && (
         <Swiper
@@ -63,13 +63,13 @@ export default function CaroucelHistoria() {
           pagination={{
             clickable: true,
           }}
-          className="mySwiper !pl-5"
+          className="mySwiper "
           breakpoints={{
             850: {
               slidesPerView: 2,
               spaceBetween: 30,
             },
-            1450: {
+            1080: {
               slidesPerView: 3,
               spaceBetween: 100,
             },
@@ -83,7 +83,7 @@ export default function CaroucelHistoria() {
             <SwiperSlide key={index}>
               <div className="w-full flex flex-col -z-0 cursor-grab">
                 <div className="w-full flex justify-end">
-                  <div className="w-[90%] h-[450px] bg-slate-400 !relative rounded-lg overflow-hidden">
+                  <div className="w-full h-[450px] bg-slate-400 !relative rounded-lg overflow-hidden">
                     <Image
                       unoptimized
                       src={fundador.imagen}

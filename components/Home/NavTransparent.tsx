@@ -15,10 +15,11 @@ import { useEffect, useState } from "react";
 
 export default function NavTransparent() {
   const { language, changeLanguage } = useLanguage();
-
   const translations = trs as any;
 
   const [isSliderVisible, setSliderVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isAnimating, setAnimating] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
@@ -34,8 +35,20 @@ export default function NavTransparent() {
   };
 
   const handleScroll = () => {
-    // Cambia el estado si se ha desplazado más allá de la altura de la ventana
-    setIsScrolled(window.scrollY > 70);
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 70) {
+      // Desplazándose hacia abajo
+      setAnimating(true);
+      setTimeout(() => setIsVisible(false), 300);
+    } else {
+      // Desplazándose hacia arriba
+      setIsVisible(true);
+      setAnimating(false);
+    }
+
+    setLastScrollY(currentScrollY);
+    setIsScrolled(currentScrollY > 70);
   };
 
   const onChangeLanguage = () => {
@@ -44,21 +57,18 @@ export default function NavTransparent() {
   };
 
   useEffect(() => {
-    // Añadir el evento de scroll
     window.addEventListener("scroll", handleScroll);
-
-    // Limpiar el evento de scroll al desmontar el componente
     return () => {
-      window.addEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [lastScrollY]);
 
   return (
     <>
       <div
         className={`w-full mx-auto ${
-          isScrolled ? "fixed bg-black" : ""
-        } z-50 transition-bg duration-300`}
+          isVisible ? "fixed bg-black" : "hidden"
+        } z-50 transition-all duration-300`}
       >
         <div className="w-full hidden lg:grid md:grid-cols-[auto_40%_auto] gap-3 md:gap-0 justify-between h-auto p-3 md:px-10 md:h-[124px] 2xl:h-[150px] items-center text-base">
           <div className="w-full text-white flex justify-start gap-5 text-sm xl:text-base 2xl:text-2xl">
@@ -208,7 +218,7 @@ export default function NavTransparent() {
               isAnimating ? "translate-y-0" : "-translate-y-full"
             }`}
           >
-            <div className="px-7 py-5 flex flex-col gap-5 text-white">
+            <div className="px-7 py-7 flex flex-col gap-5 text-white">
               <Link
                 className={`hover:text-[#23B3F0] ${
                   pathname == "/danzas" ? "text-[#23b3f0]" : ""

@@ -1,0 +1,43 @@
+import Link from "next/link";
+import React from "react";
+
+export default function Mapa() {
+  return (
+    <div className="w-full h-screen relative px-5 py-14 bg-black">
+      <div className="max-w-[85%] w-full mx-auto h-full grid grid-rows-[75%_auto]">
+        <div className="w-full h-full grid grid-cols-2 gap-10">
+          <div className="w-full h-full flex flex-col gap-10 text-white">
+            <h1 className="text-7xl bebas-neue">¿Dónde estamos ubicados?</h1>
+            <p className="text-3xl">Jr. Heroes de Tarapaca 168, Lima, Peru</p>
+            <div className="w-full flex flex-col gap-1">
+              <h1 className="text-3xl text-[#FF9900]">Teléfono:</h1>
+              <p className="text-3xl">(01) 7156961</p>
+            </div>
+            <div className="w-full flex flex-col gap-1">
+              <h1 className="text-3xl text-[#FF9900]">Nuestra Carta Digital</h1>
+              <Link href="https://bit.ly/CartaPuquina" className="text-3xl">
+                https://bit.ly/CartaPuquina
+              </Link>
+            </div>
+            <p className="text-3xl">Siguenos en nuestras redes sociales</p>
+            <p className="text-3xl text-[#FF9900]">@puquinaqocha</p>
+            <div className="w-fit px-6 py-2 bg-[#FF9900] rounded-xl cursor-pointer text-xl">Contactanos</div>
+          </div>
+          <div className="w-full h-full border-2"></div>
+        </div>
+        <div className="w-full h-full flex flex-col gap-5 justify-center items-center text-white bebas-neue">
+          <h1 className="text-bold text-7xl">Descubre nuestro menú</h1>
+          <div className="w-full flex flex-col gap-1">
+            <p className="text-4xl text-center">
+              El menú consiste en una mezcla de comidas tipica de Puno y cambia
+              según la estación.
+            </p>
+            <p className="text-4xl text-center">
+              ¡No te olvides de preguntar por los platos especiales del día!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

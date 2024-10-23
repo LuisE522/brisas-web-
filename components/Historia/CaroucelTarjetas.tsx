@@ -152,19 +152,21 @@ export default function CaroucelTarjetas() {
         <>
           {infoTarjeta != null && (
             <div
-              className={`w-full h-screen left-0 top-0 fixed bg-black z-[999] transition-opacity duration-500 ${
+              className={`w-full h-screen left-0 top-0 fixed bg-[#E8E8E8] z-[999] transition-opacity duration-500 ${
                 animationShowInfo ? "opacity-100" : "opacity-0"
               }`}
             >
               <div
-                className={`w-full h-screen grid grid-cols-1 lg:grid-cols-[70%_30%]  overflow-auto lg:overflow-hidden`}
+                className={`w-full h-screen grid grid-cols-1 lg:grid-cols-[70%_30%] overflow-auto lg:overflow-hidden`}
               >
                 <IoIosCloseCircle
                   className="cursor-pointer absolute right-5 top-2 text-2xl lg:text-4xl z-50 lg:hidden"
                   onClick={onCloseShowInfoTarjeta}
                 />
-                <div className="w-full h-screen bg-white relative flex justify-center items-center">
-                  <div className="w-full h-screen absolute p-3 md:p-10">
+                {/* DIV izquierdo */}
+                <div className="w-full h-fit lg:h-screen bg-white relative flex justify-center items-center">
+                  {/* Botones siguiente y anterior */}
+                  <div className="w-full h-full absolute p-3 md:p-10">
                     <div className="w-full h-full flex flex-col justify-between items-center text-white text-[8px] md:text-xl xl:text-4xl relative 2xl:text-5xl">
                       <div className=" rounded-full bg-black/20 p-1 flex justify-center items-center">
                         <IoIosArrowUp
@@ -180,6 +182,7 @@ export default function CaroucelTarjetas() {
                       </div>
                     </div>
                   </div>
+                  {/* Botones siguiente y anterior */}
                   <Image
                     unoptimized
                     src={infoTarjeta[currentIndex].image}
@@ -189,6 +192,8 @@ export default function CaroucelTarjetas() {
                     className={`w-full h-auto object-cover transition-opacity duration-300 ${fadeClass}`}
                   />
                 </div>
+                {/* DIV izquierdo */}
+                {/* DIV derecho */}
                 <div className="bg-[#E8E8E8] w-full h-fit lg:h-screen overflow-y-auto p-10 flex flex-col gap-10 !relative">
                   <IoIosCloseCircle
                     className="cursor-pointer hidden lg:block absolute right-3 top-2 text-2xl lg:text-4xl"
@@ -214,6 +219,7 @@ export default function CaroucelTarjetas() {
                     </p>
                   </div>
                 </div>
+                {/* DIV derecho */}
               </div>
             </div>
           )}
