@@ -4,7 +4,7 @@ import React from "react";
 export default function Info() {
   return (
     <>
-      <div className="w-full h-[250px] sm:h-[350px] md:h-screen relative">
+      <div className="w-full h-[350px] sm:h-[450px] md:h-[350px] lg:h-screen relative">
         <div className="w-full h-full flex bg-black text-white">
           <div className="max-w-[40%] w-full h-full overflow-hidden">
             <Image
@@ -18,10 +18,10 @@ export default function Info() {
           </div>
           <div className="w-full h-full grid grid-cols-3 grid-rows-2">
             <div className="max-w-[90%] w-full mx-auto flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-              <h1 className="font-bold text-[10px] sm:text-sm md:text-base lg:text-xl">
+              <h1 className="font-bold text-[10px] sm:text-sm md:text-base lg:text-xl 2xl:text-3xl">
                 LOS PICARONES
               </h1>
-              <p className="text-[6px] sm:text-[9px] md:text-xs lg:text-sm">
+              <p className="text-[6px] sm:text-[9px] md:text-xs lg:text-sm 2xl:text-base">
                 Los picarones son dulces fritos en forma de anillo hechos con
                 maza de harina de trigo mezclada con zapallo
               </p>
@@ -37,10 +37,10 @@ export default function Info() {
               />
             </div>
             <div className="max-w-[90%] w-full mx-auto flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-              <h1 className="font-bold text-[10px] sm:text-sm md:text-base lg:text-xl">
+              <h1 className="font-bold text-[10px] sm:text-sm md:text-base lg:text-xl 2xl:text-3xl">
                 Chairo
               </h1>
-              <p className="text-[6px] sm:text-[9px] md:text-xs lg:text-sm">
+              <p className="text-[6px] sm:text-[9px] md:text-xs lg:text-sm 2xl:text-base">
                 tradición boliviana principalmente de la ciudad de La Paz y
                 también forma parte de una tradición peruana de Puno, conocido
                 plato de origen Aimara
@@ -58,10 +58,10 @@ export default function Info() {
             </div>
 
             <div className="max-w-[90%] w-full mx-auto flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-              <h1 className="font-bold text-[10px] sm:text-sm md:text-base lg:text-xl">
+              <h1 className="font-bold text-[10px] sm:text-sm md:text-base lg:text-xl 2xl:text-3xl">
                 Pisco sour
               </h1>
-              <p className="text-[6px] sm:text-[9px] md:text-xs lg:text-sm">
+              <p className="text-[6px] sm:text-[9px] md:text-xs lg:text-sm 2xl:text-base">
                 Cóctel Peruano tradicional compuesto por pisco, jugo de
                 limón,azúcar,hielo y bitters.
               </p>

@@ -66,15 +66,15 @@ export default function NavTransparent() {
   return (
     <>
       <div
-        className={`w-full mx-auto ${
-          isVisible ? "fixed bg-black" : "hidden"
-        } z-50 transition-all duration-300`}
+        className={`w-full mx-auto ${isVisible ? "fixed" : "hidden"}
+        ${isScrolled ? "fixed bg-black" : "bg-black/70"}
+        z-50 transition-all duration-300`}
       >
         <div className="w-full hidden lg:grid md:grid-cols-[auto_40%_auto] gap-3 md:gap-0 justify-between h-auto p-3 md:px-10 md:h-[124px] 2xl:h-[150px] items-center text-base">
           <div className="w-full text-white flex justify-start gap-5 text-sm xl:text-base 2xl:text-2xl">
             <Link href="/danzas">{translations[language].inicio}</Link>
             <Link href="#">{translations[language].eventos}</Link>
-            <Link href="#">{translations[language].nosotros}</Link>
+            <Link href="/nosotros">{translations[language].nosotros}</Link>
             <Link href="/historia">{translations[language].historia}</Link>
             <Link
               href="https://sistemas.brisasdeltiticaca.com/intranet"
@@ -121,7 +121,7 @@ export default function NavTransparent() {
             </div>
             <div className="h-full items-center justify-end gap-3 flex cursor-pointer">
               <div
-                className="flex flex-row gap-1 font-bold z-[99999] text-sm xl:text-base 2xl:text-2xl"
+                className="flex flex-row gap-1 font-bold z-[99999] text-sm xl:text-base 2xl:text-2xl select-none"
                 onClick={onChangeLanguage}
               >
                 <span
@@ -181,12 +181,14 @@ export default function NavTransparent() {
             />
           </Link>
           <div className="w-full md:w-[85px] flex flex-row gap-2 justify-end items-center">
-            <div className="flex flex-row gap-1 font-bold text-[10px] sm:text-xs md:text-sm">
+            <div
+              className="flex flex-row gap-1 font-bold text-[10px] sm:text-xs md:text-sm select-none"
+              onClick={onChangeLanguage}
+            >
               <span
                 className={`cursor-pointer ${
                   language == "es" ? "text-muted-foreground" : "text-white"
                 }`}
-                onClick={() => changeLanguage("es")}
               >
                 ESP
               </span>
@@ -195,7 +197,6 @@ export default function NavTransparent() {
                 className={`cursor-pointer ${
                   language == "en" ? "text-muted-foreground" : "text-white"
                 }`}
-                onClick={() => changeLanguage("en")}
               >
                 EN
               </span>
@@ -239,7 +240,7 @@ export default function NavTransparent() {
                 className={`hover:text-[#23B3F0] ${
                   pathname == "/danzasqwe" ? "text-[#23b3f0]" : ""
                 }`}
-                href="#"
+                href="/nosotros"
               >
                 {translations[language].nosotros}
               </Link>

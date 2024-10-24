@@ -178,8 +178,8 @@ export default function GameArea() {
       setLoading(false);
       setVisibleImages(res.slice(0, initialColumns * 5));
 
-      console.log(res);
-      console.log(visibleImages);
+      /* console.log(res);
+      console.log(visibleImages); */
     };
 
     load();
@@ -200,7 +200,7 @@ export default function GameArea() {
         setWidthGrid(500);
         setHeightGrid(580);
       } else {
-        console.log("Por defecto");
+        /* console.log("Por defecto"); */
         setWidthGrid(300);
         setHeightGrid(380);
       }

@@ -10,6 +10,7 @@ import Mapa from "./Mapa";
 import Promociones from "./Promociones";
 import Carta from "./Carta";
 import Info from "./Info";
+import Contactanos from "./Contactanos";
 
 export default function Puquina() {
   return (
@@ -46,23 +47,27 @@ export default function Puquina() {
               SALÓN GASTRONOMICO
             </span>
             <h1
-              className="text-4xl lg:text-6xl 2xl:text-8xl bebas-neue text-[#FF9900]"
+              className="text-4xl md:text-6xl lg:text-8xl 2xl:text-[150px] bebas-neue text-[#FF9900]"
               style={{ lineHeight: "1.2" }}
             >
               PUQUINA Q’OCHA
             </h1>
+            {/* <span className="text-[10px] sm:text-sm md:text-base 2xl:text-xl">
+              Lo mejor de la gastronompia altiplánica bajo el cielo de Lima
+            </span> */}
           </div>
         </div>
       </div>
 
       <Nosotros />
-      <Reseña />
       <Mapa />
       <Promociones />
 
       <Carta />
 
       <Info />
+
+      <Contactanos />
     </>
   );
 }

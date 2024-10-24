@@ -83,11 +83,11 @@ export default function Carta() {
   return (
     <div className="max-w-[95%] w-[500px] md:w-[800px] lg:w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto relative flex flex-col gap-10 md:gap-20 py-10 md:py-20">
       <div className="w-full flex flex-col gap-8">
-        <div className="w-full h-[50px] flex flex-row flex-wrap items-center justify-between gap-1 uppercase">
+        <div className="w-full h-[70px] lg:h-[50px] flex flex-row flex-nowrap overflow-x-auto items-center justify-between gap-7 md:gap-5 lg:gap-3 uppercase text-nowrap">
           <div
             onClick={() => changeCategoria("Entradas")}
             className={`cursor-pointer transition-all duration-500 ${
-              categoria === "Entradas" ? "text-lg font-bold" : "text-sm"
+              categoria === "Entradas" ? "text-lg 2xl:text-2xl font-bold" : "text-sm 2xl:text-lg"
             }`}
           >
             Entradas
@@ -95,7 +95,7 @@ export default function Carta() {
           <div
             onClick={() => changeCategoria("Típico")}
             className={`cursor-pointer transition-all duration-500 ${
-              categoria === "Típico" ? "text-lg font-bold" : "text-sm"
+              categoria === "Típico" ? "text-lg 2xl:text-2xl font-bold" : "text-sm 2xl:text-lg"
             }`}
           >
             Típico
@@ -103,7 +103,7 @@ export default function Carta() {
           <div
             onClick={() => changeCategoria("Criollos")}
             className={`cursor-pointer transition-all duration-500 ${
-              categoria === "Criollos" ? "text-lg font-bold" : "text-sm"
+              categoria === "Criollos" ? "text-lg 2xl:text-2xl font-bold" : "text-sm 2xl:text-lg"
             }`}
           >
             Criollos
@@ -111,7 +111,7 @@ export default function Carta() {
           <div
             onClick={() => changeCategoria("Especialidades")}
             className={`cursor-pointer transition-all duration-500 ${
-              categoria === "Especialidades" ? "text-lg font-bold" : "text-sm"
+              categoria === "Especialidades" ? "text-lg 2xl:text-2xl font-bold" : "text-sm 2xl:text-lg"
             }`}
           >
             Especialidades
@@ -119,7 +119,7 @@ export default function Carta() {
           <div
             onClick={() => changeCategoria("Menu infantil")}
             className={`cursor-pointer transition-all duration-500 ${
-              categoria === "Menu infantil" ? "text-lg font-bold" : "text-sm"
+              categoria === "Menu infantil" ? "text-lg 2xl:text-2xl font-bold" : "text-sm 2xl:text-lg"
             }`}
           >
             Menu infantil
@@ -127,7 +127,7 @@ export default function Carta() {
           <div
             onClick={() => changeCategoria("Tragos")}
             className={`cursor-pointer transition-all duration-500 ${
-              categoria === "Tragos" ? "text-lg font-bold" : "text-sm"
+              categoria === "Tragos" ? "text-lg 2xl:text-2xl font-bold" : "text-sm 2xl:text-lg"
             }`}
           >
             Tragos
@@ -135,8 +135,8 @@ export default function Carta() {
           <div
             onClick={() => changeCategoria("Postres")}
             className={`cursor-pointer transition-all duration-500 ${
-              categoria === "Postres" ? "text-lg font-bold" : "text-sm"
-            }`}
+              categoria === "Postres" ? "text-lg 2xl:text-2xl font-bold" : "text-sm 2xl:text-lg"
+            }`} 
           >
             Postres
           </div>
@@ -144,14 +144,14 @@ export default function Carta() {
         <p className="text-6xl text-center bebas-neue" id="entradas">
           {categoria}
         </p>
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-5">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10">
           {entradas.map((entrada: any, index: number) => (
             <div
               key={index}
               className="w-full relative h-auto overflow-hidden rounded-lg"
-              style={{ boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)" }}
+              style={{ boxShadow: "0px 8px 19px 4px rgba(51,51,51,0.3)" }}
             >
-              <div className="w-full h-44 2xl:h-52 relative overflow-hidden">
+              <div className="w-full h-44 lg:h-52 2xl:h-96 relative overflow-hidden">
                 <Image
                   unoptimized
                   src={entrada.imagen}
@@ -162,8 +162,8 @@ export default function Carta() {
                 />
               </div>
               <div className="p-3 w-full h-32 md:h-40 flex flex-col gap-1">
-                <h1 className="font-bold">{entrada.nombre}</h1>
-                <p className="text-[10px] md:text-xs line-clamp-4">
+                <h1 className="font-bold text-base 2xl:text-2xl">{entrada.nombre}</h1>
+                <p className="text-[10px] md:text-xs 2xl:text-base line-clamp-4">
                   {entrada.descripcion}
                 </p>
               </div>

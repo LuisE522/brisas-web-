@@ -109,12 +109,14 @@ export default function Danzas() {
             </span>
             {isMute ? (
               <FaVolumeMute
-                className="cursor-pointer text-sm sm:text-md lg:text-xl 2xl:text-3xl"
+                color="black"
+                className="cursor-pointer text-sm sm:text-4xl lg:text-3xl 2xl:text-7xl aspect-square  bg-white lg:p-4 mt-10"
                 onClick={() => setIsMute(!isMute)}
               />
             ) : (
               <FaVolumeUp
-                className="cursor-pointer text-sm sm:text-md lg:text-xl 2xl:text-3xl"
+                color="black"
+                className="cursor-pointer text-sm sm:text-md lg:text-3xl 2xl:text-7xl aspect-square rounded-full bg-white lg:p-4 mt-10"
                 onClick={() => setIsMute(!isMute)}
               />
             )}
@@ -155,7 +157,6 @@ export default function Danzas() {
           {/* Titulo ante de las danzas */}
 
           {/* comienzo de las danzas mas importantes */}
-
           <div className="w-full flex flex-col gap-20 md:gap-32">
             <div className="max-w-[90%] w-[500px] md:w-[800px] lg:w-[1080px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto  h-[130px] min-[400px]:h-[190px] sm:h-[220px] md:h-[250px] lg:h-[430px] xl:h-[500px] 2xl:h-[550px] relative flex justify-center gap-3 danzasFade">
               <Image
@@ -318,194 +319,6 @@ export default function Danzas() {
               </div>
             </div>
           </div>
-
-          {/*  <div className="w-full relative">
-            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-auto flex justify-center items-end gap-3 relative">
-              <div className="w-full h-full flex justify-center items-center">
-                <Image
-                  unoptimized
-                  src="/assets/images/danzas/personaje9.png"
-                  alt="alt"
-                  width={0}
-                  height={0}
-                  className="w-full h-auto danzasFadeAndScale"
-                />
-              </div>
-              <Image
-                unoptimized
-                src="/assets/images/danzas/mancha8.png"
-                alt="alt"
-                width={0}
-                height={0}
-                className="absolute top-0 right-0 -z-10 w-auto h-[600px]"
-              />
-              <div className="w-full h-full flex justify-center">
-                <div className="flex flex-col gap-2 danzasMarginTop">
-                  <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl bebas-neue">
-                    {translations[language].danza_diablada_destacado_titulo}
-                  </h1>
-                  <p className="text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
-                    {
-                      translations[language]
-                        .danza_diablada_destacado_descripcion
-                    }
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full relative">
-            <Image
-              unoptimized
-              src="/assets/images/danzas/mancha1.png"
-              alt="alt"
-              width={0}
-              height={0}
-              className="absolute top-0 lg:left-36 -z-10 w-auto h-auto md:h-[600px]"
-            />
-            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-auto flex justify-center items-end gap-3 relative">
-              <div className="w-full h-full flex justify-center items-end">
-                <div className="flex flex-col gap-2 danzasMarginTop">
-                  <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl bebas-neue">
-                    {translations[language].danza_caporales_titulo}
-                  </h1>
-                  <p className="text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
-                    {translations[language].danza_caporales_descripcion}
-                  </p>
-                </div>
-              </div>
-              <div className="w-full h-full flex justify-center items-center">
-                <Image
-                  unoptimized
-                  src="/assets/images/danzas/personaje1.png"
-                  alt="alt"
-                  width={0}
-                  height={0}
-                  className="w-full h-auto danzasFadeAndScale"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full relative">
-            <Image
-              unoptimized
-              src="/assets/images/danzas/mancha2.png"
-              alt="alt"
-              width={0}
-              height={0}
-              className="absolute top-0 right-0 -z-10 w-[200px] lg:w-auto h-auto"
-            />
-            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-auto flex justify-center items-end gap-3 relative">
-              <div className="w-full h-full flex justify-center items-center">
-                <Image
-                  unoptimized
-                  src="/assets/images/danzas/personaje2.png"
-                  alt="alt"
-                  width={0}
-                  height={0}
-                  className="w-full h-auto danzasFadeAndScale"
-                />
-              </div>
-              <div className="w-full h-full flex justify-center">
-                <div className="absolute top-0 w-full flex justify-center">
-                  <Image
-                    unoptimized
-                    src="/assets/images/danzas/planta2.png"
-                    alt="alt"
-                    width={0}
-                    height={0}
-                    className="h-[70px] md:h-[100px] lg:h-[200px] w-auto danzasFade"
-                  />
-                </div>
-                <div className="flex flex-col gap-2 danzasMarginTop">
-                  <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl bebas-neue">
-                    {translations[language].danza_sikuris_titulo}
-                  </h1>
-                  <p className="text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
-                    {translations[language].danza_sikuris_descripcion}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-auto flex justify-center items-end gap-3 relative">
-            <div className="w-full h-full flex justify-center">
-              <div className="absolute top-0 w-full flex justify-center">
-                <Image
-                  unoptimized
-                  src="/assets/images/danzas/planta3.png"
-                  alt="alt"
-                  width={0}
-                  height={0}
-                  className="h-[70px] md:h-[100px] lg:h-[200px] w-auto danzasFade"
-                />
-              </div>
-              <div className="flex flex-col gap-2 danzasMarginTop">
-                <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl bebas-neue">
-                  {translations[language].danza_morenada_titulo}
-                </h1>
-                <p className="text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
-                  {translations[language].danza_morenada_descripcion}
-                </p>
-              </div>
-            </div>
-            <div className="w-full h-full flex justify-center items-center">
-              <Image
-                unoptimized
-                src="/assets/images/danzas/personaje3.png"
-                alt="alt"
-                width={0}
-                height={0}
-                className="w-full h-auto danzasFadeAndScale"
-              />
-            </div>
-          </div>
-
-          <div className="w-full relative">
-            <Image
-              unoptimized
-              src="/assets/images/danzas/mancha3.png"
-              alt="alt"
-              width={0}
-              height={0}
-              className="absolute top-0 left-0 w-[150px] lg:w-[300px] h-auto"
-            />
-            <div className="max-w-[95%] w-[900px] 2xl:w-full 2xl:max-w-screen-2xl mx-auto h-auto flex justify-center items-end gap-3 relative">
-              <div className="w-full h-full flex justify-center items-center">
-                <Image
-                  unoptimized
-                  src="/assets/images/danzas/personaje4.png"
-                  alt="alt"
-                  width={0}
-                  height={0}
-                  className="w-auto h-full z-10 danzasFadeAndScale"
-                />
-              </div>
-              <div className="w-full h-full flex justify-center">
-                <div className="absolute top-0 w-full flex justify-center">
-                  <Image
-                    unoptimized
-                    src="/assets/images/danzas/planta4.png"
-                    alt="alt"
-                    width={0}
-                    height={0}
-                    className="h-[70px] md:h-[100px] lg:h-[200px] w-auto danzasFade"
-                  />
-                </div>
-                <div className="flex flex-col gap-2 danzasMarginTop">
-                  <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl bebas-neue">
-                    {translations[language].danza_kullawa_titulo}
-                  </h1>
-                  <p className="text-[8px] md:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
-                    {translations[language].danza_kullawa_descripcion}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> */}
           {/* Fin de las danzas mas importantes */}
         </div>
       </div>
